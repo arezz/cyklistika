@@ -1,0 +1,1 @@
+Autoøi: Jakub Jaroš & Vojtìch Gruchala &nbsp;|&nbsp; Administrátor: Vojtìch Gruchala &nbsp;|&nbsp; Kontakt: v.gruchala@gmail.com
