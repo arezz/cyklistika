@@ -19,7 +19,7 @@
       <div class="content">
         <form action="prihlaseni-zavodnika.php" method="post">      
           <table>        
-            <tr><td colspan="2" style="text-align:center; vertical-align:bottom; height:50px;"><h1>Pøihlášení závodníka</h1></td></tr>          
+            <tr><td colspan="2" style="text-align:center; vertical-align:bottom; height:50px;"><h1>Pøihlášení na závod</h1></td></tr>
             <tr><td style="text-align:right; vertical-align:top;">Závod:&nbsp;</td><td style="text-align:left;"><?php include("zavod-prihlaseni-combobox.php"); errmsg("zavod","Vyberte závod"); ?></td></tr>
             <tr><td style="text-align:right; vertical-align:top;">Pøíjmení:&nbsp;</td><td style="text-align:left;"><input type="text" name="prijmeni" <?php writte("prijmeni"); ?>/><?php errmsg("prijmeni","Zadejte pøíjmení"); ?></td></tr>
             <tr><td style="text-align:right; vertical-align:top;">Jméno:&nbsp;</td><td style="text-align:left;"><input type="text" name="jmeno" <?php writte("jmeno"); ?>/><?php errmsg("jmeno","Zadejte jméno"); ?></td></tr>

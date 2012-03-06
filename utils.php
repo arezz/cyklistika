@@ -18,6 +18,27 @@
     $raceName11_17="BÏlskÈ okruhy";
     $raceName11_18="O poh·r obce Kr·sn·";
 
+    $raceName12_1="Cena Trispolu";
+    $raceName12_2="Hodinovka";
+    $raceName12_3="»asovka ArcelorMittal";
+    $raceName12_4="Mlyn·¯sk· Ëasovka";
+    $raceName12_5="O cenu Krnova";
+    $raceName12_6="Tour de S·dek";
+    $raceName12_7="VelkopolomskÈ okruhy";
+    $raceName12_8="KritÈrium ZlÌn";
+    $raceName12_9="Cena Continentalu";
+    $raceName12_10="Tour de Javorov˝";
+    $raceName12_11="M»R Ëasovka";
+    $raceName12_12="M»R silnice";
+    $raceName12_13="Grand Prix Forman (MistrovstvÌ SPAC)";
+    $raceName12_14="Stonavsk· Ëasovka (MistrovstvÌ SPAC)";
+    $raceName12_15="Velk· cena Laöska";
+    $raceName12_16="Mokrolazeck· 60";
+    $raceName12_17="Paskovsk˝ kriù·k";
+    $raceName12_18="BÏlskÈ okruhy";
+    $raceName12_19="Memori·l Aloise Dohnala";
+    $raceName12_20="O poh·r obce Kr·sn·";
+
     function getRealStanding2011($maxPoints, $points) {
       $realPoints = 0;
       if ($maxPoints == 60) { // MCR SAC
@@ -33,7 +54,31 @@
       if ($realPoints < 36 && $realPoints > 1) {
           return 38 - $realPoints;
       }
-      if ($realPoints == 1) { return 38; }
+      if ($realPoints == 1) { return 37; }
+      return 0;
+    }
+
+    function getRealStanding2012($maxPoints, $points) {
+      $realPoints = 0;
+      if ($maxPoints == 20) {
+          return 0; // Trispol
+      } else if ($maxPoints == 70) { // M SPAC
+          $realPoints = ($points - 10);
+      } else {
+          $realPoints = $points;
+      }
+      if ($realPoints == 60) { return 1; }
+      if ($realPoints == 55) { return 2; }
+      if ($realPoints == 50) { return 3; }
+      if ($realPoints == 48) { return 4; }
+      if ($realPoints == 46) { return 5; }
+      if ($realPoints == 44) { return 6; }
+      if ($realPoints == 42) { return 7; }
+      if ($realPoints == 40) { return 8; }
+      if ($realPoints < 40 && $realPoints > 1) {
+          return 48 - $realPoints;
+      }
+      if ($realPoints == 1) { return 47; }
       return 0;
     }
 
