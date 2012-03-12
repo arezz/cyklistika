@@ -1,5 +1,10 @@
 <?php
   require("nastaveni.php"); 
+  $id_category = -1;
+  if (isset($_GET["id_category"]))
+  {
+    $id_category = $_GET["id_category"];
+  }
   echo "<?xml version='1.0' encoding='windows-1250' ?>\n";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -45,9 +50,16 @@
             <th colspan="2" style="text-align:center; vertical-align:bottom; width:30px;">Top 10</th>
           </tr>
           <?php 
-            $dotaz="SELECT * FROM spac_results_2011 t
-                 JOIN spac_category c ON (t.id_category=c.id)
-                 ORDER BY id_category, total_best_races DESC";
+            if ($id_category === -1) {
+	            $dotaz="SELECT * FROM spac_results_2011 t
+	                 JOIN spac_category c ON (t.id_category=c.id)
+	                 ORDER BY id_category, total_best_races DESC";
+            } else {
+            	$dotaz="SELECT * FROM spac_results_2011 t
+	                 JOIN spac_category c ON (t.id_category=c.id)
+	                 WHERE t.id_category=$id_category
+	                 ORDER BY id_category, total_best_races DESC";
+            }
             $vysledek = MySQL_Query($dotaz);
             $i = 1;
             $categoryTmp = "X";

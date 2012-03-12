@@ -23,9 +23,20 @@
       </div>
       <div class="content">
         <table>
-          <tr><td colspan="4" style="text-align:center; vertical-align:bottom; height:50px;"><h1><?php echo $firstname."&nbsp;".$surname ?></h1></td></tr>
+       	<?php
+        	$dotaz_zavodnik="SELECT * FROM racer r                    
+                    WHERE r.id=$id_racer";
+            $vysledek_zavodnik = MySQL_Query($dotaz_zavodnik);
+            while ($zaznam = MySQL_Fetch_Array($vysledek_zavodnik))
+            {
+            	$firstname=$zaznam["firstname"];
+              	$surname=$zaznam["surname"];
+            }
           
-          <?php
+        ?>
+        <tr><td colspan="4" style="text-align:center; vertical-align:bottom; height:50px;"><h1><?php echo $firstname."&nbsp;".$surname ?></h1></td></tr>
+          
+        <?php 
           // 2011 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             $pocetZavodniku = 0;
             $umisteniVKategorii = 0;
@@ -114,19 +125,22 @@
               if ($r18 > 0) { $pocetZavodu += 1; }
 
 
-              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 2011</h3></td>";
-              echo "<tr><td colspan=\"2\" style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
-                    <td colspan=\"2\" style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td></tr>";
-              echo "<tr><td colspan=\"2\" style=\"text-align:right; padding-right:15px;\">Kategorie:</td>
-                    <td colspan=\"2\" style=\"text-align:left; padding-left:15px;\"><b>$category - $categoryName</b></td></tr>";
-              echo "<tr><td colspan=\"2\" style=\"text-align:right; padding-right:15px;\">Koneèné umístìní:</td>
-                    <td colspan=\"2\" style=\"text-align:left; padding-left:15px;\"><b>$umisteniVKategorii. / $pocetZavodniku</b></td></tr>";
-              echo "<tr><td colspan=\"2\" style=\"text-align:right; padding-right:15px;\">Souèet bodù (10 NEJ / celkem):</td>
-                    <td colspan=\"2\" style=\"text-align:left; padding-left:15px;\"><b>$totalPointsBest / $totalPoints</b></td></tr>";
-              echo "<tr><td colspan=\"2\" style=\"text-align:right; padding-right:15px;\">Poèet dokonèených závodù:</td>
-                    <td colspan=\"2\" style=\"text-align:left; padding-left:15px;\"><b>$pocetZavodu / 18</b></td></tr>";
-              echo "<tr><td colspan=\"2\" style=\"text-align:right; padding-right:15px;\">Nejlepší umístìní:</td>
-                    <td colspan=\"2\" style=\"text-align:left; padding-left:15px;\"><b>$nejUmisteniPoradi. ($nejUmisteniZavod)</b></td></tr>";
+              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-zavodu-2011-celkove.php?id_category=$categoryId\">Sezona 2011</a></h3></td>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Dokonèených závodù / celkem:</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$pocetZavodu / 18</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Kategorie:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$category - $categoryName</b></td>
+              	    <td style=\"text-align:right; padding-right:15px;\">Souèet bodù (10 NEJ / celkem):</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$totalPointsBest / $totalPoints</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Koneèné umístìní:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$umisteniVKategorii. / $pocetZavodniku</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Nejlepší umístìní:</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$nejUmisteniPoradi. ($nejUmisteniZavod)</b></td></tr>";
+            }
+            if ($pocetZavodu === 0) {
+            	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 2011 - bez úèasti</h3></td>";
             }
             // 2011 -----------------------------------------------------------
           ?>
