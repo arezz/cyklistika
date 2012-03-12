@@ -18,7 +18,7 @@
       <div class="content">
         <table>
           <tr><td colspan="4" style="text-align:center; vertical-align:bottom; height:50px;"><h1>Výpis závodù</h1></td></tr>
-          <tr><td colspan="4" style="text-align:center; vertical-align:top; height:40px;">Pro seznam pøihlášených závodníkù kliknìte na název závodu.</td></tr>
+          <tr><td colspan="4" style="text-align:center; vertical-align:top; height:40px;">Pro seznam pøihlášených kliknìte na název závodu.</td></tr>
           <tr>
             <th>Datum závodu</th>
             <th>Název</th>

@@ -27,7 +27,7 @@
       </div>
       <div class="content">
         <table>
-          <tr><td style="vertical-align:bottom; height:50px;"><a href="vypis-zavodu.php">Zpìt na výpis závodù</a></td><td colspan="3" style="text-align:center; vertical-align:bottom;"><h1>Seznam pøihlášených závodníkù</h1></td><td style="text-align:right; vertical-align:bottom;"><form action="detail-zavodu.php?zavod=<?php echo $zavod; ?>"><?php include("kategorie-combobox.php"); ?></form></td></tr>
+          <tr><td style="vertical-align:bottom; height:50px;"><a href="vypis-zavodu.php">Zpìt na výpis závodù</a></td><td colspan="3" style="text-align:center; vertical-align:bottom;"><h1>Seznam pøihlášených</h1></td><td style="text-align:right; vertical-align:bottom;"><form action="detail-zavodu.php?zavod=<?php echo $zavod; ?>"><?php include("kategorie-combobox.php"); ?></form></td></tr>
           <tr>
             <td>&nbsp;</td>
             <td colspan="3">
@@ -46,7 +46,7 @@
                     $vysledek_pocet = MySQL_Query($dotaz_pocet);
                     while ($vysledek_zaznam = mysql_fetch_assoc($vysledek_pocet)) { 
                         $pocet=$vysledek_zaznam["cnt"];
-                        echo "<h3>Poèet pøihlášených závodníkù: $pocet</h3>";
+                        echo "<h3>Poèet pøihlášených: $pocet</h3>";
                     }                    
                  ?>
             </td>
