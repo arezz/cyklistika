@@ -1,15 +1,10 @@
 <?php
   require("nastaveni.php");
   include("utils.php");
-  $surname = "";
-  if (isset($_GET["surname"]))
+  $id_racer = 0;
+  if (isset($_GET["id_racer"]))
   {
-    $surname = $_GET["surname"];
-  }
-  $firstname = "";
-  if (isset($_GET["firstname"]))
-  {
-    $firstname = $_GET["firstname"];
+    $id_racer = $_GET["id_racer"];
   }
   echo "<?xml version='1.0' encoding='windows-1250' ?>\n";
 ?>
@@ -38,9 +33,7 @@
 
             $dotaz=sprintf("SELECT * FROM spac_results_2011 sr
                     JOIN spac_category c ON (sr.id_category=c.id)
-                    WHERE sr.racer_surname='%s' AND sr.racer_firstname='%s'",
-                    mysql_real_escape_string($surname),
-                    mysql_real_escape_string($firstname));
+                    WHERE sr.id_racer=$id_racer");
             $vysledek = MySQL_Query($dotaz);
             while ($zaznam = MySQL_Fetch_Array($vysledek))
             {

@@ -54,6 +54,7 @@
             while ($zaznam = MySQL_Fetch_Array($vysledek))
             {
               $id=$zaznam["id"];
+              $id_racer=$zaznam["id_racer"];
               $firstname=$zaznam["racer_firstname"];
               $surname=$zaznam["racer_surname"];
               $team=$zaznam["racer_team"];
@@ -88,7 +89,7 @@
               if ($i % 2)
               {
                 echo "<tr><td style=\"text-align:center; vertical-align:bottom; width:50px;\">$i.</td>
-                  <td colspan=\"3\" style=\"text-align:left; width:150px;\"><a href='zavodnik-profil.php?surname=$surname&firstname=$firstname'>$surname</a></td>
+                  <td colspan=\"3\" style=\"text-align:left; width:150px;\"><a href='zavodnik-profil.php?id_racer=$id_racer'>$surname</a></td>
                   <td colspan=\"2\" style=\"text-align:left; width:150px;\">$firstname</td>
                   <td colspan=\"6\" style=\"text-align:left; width:150px;\">$team</td>
                   <td style=\"text-align:center; width:30px;\" title=\"Hodinovka\">$r1</td>
@@ -116,7 +117,7 @@
               if (!($i % 2))
               {
                 echo "<tr class='odd'><td style=\"text-align:center; vertical-align:bottom; width:50px;\">$i.</td>
-                  <td colspan=\"3\" style=\"text-align:left; width:150px;\"><a href='zavodnik-profil.php?surname=$surname&firstname=$firstname'>$surname</a></td>
+                  <td colspan=\"3\" style=\"text-align:left; width:150px;\"><a href='zavodnik-profil.php?id_racer=$id_racer'>$surname</a></td>
                   <td colspan=\"2\" style=\"text-align:left; width:150px;\">$firstname</td>
                   <td colspan=\"6\" style=\"text-align:left; width:150px;\">$team</td>
                   <td style=\"text-align:center; width:30px;\" title=\"Hodinovka\">$r1</td>
