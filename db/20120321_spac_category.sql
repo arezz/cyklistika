@@ -1,0 +1,1 @@
+ALTER TABLE `spac_category` ADD COLUMN `season` INT(4) DEFAULT '2011' NOT NULL AFTER `coefficient`;

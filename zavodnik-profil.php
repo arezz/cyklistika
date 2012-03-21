@@ -135,7 +135,7 @@
               	    <td style=\"text-align:right; padding-right:15px;\">Souèet bodù (10 NEJ / celkem):</td>
                     <td style=\"text-align:left; padding-left:15px;\"><b>$totalPointsBest / $totalPoints</b></td></tr>";
               echo "<tr><td style=\"text-align:right; padding-right:15px;\">Koneèné umístìní:</td>
-                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$umisteniVKategorii. / $pocetZavodniku</b></td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$umisteniVKategorii. / $pocetZavodniku (pouze s licencí)</b></td>
               		<td style=\"text-align:right; padding-right:15px;\">Nejlepší umístìní:</td>
                     <td style=\"text-align:left; padding-left:15px;\"><b>$nejUmisteniPoradi. ($nejUmisteniZavod)</b></td></tr>";
             }
