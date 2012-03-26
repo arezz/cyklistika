@@ -1,0 +1,1 @@
+INSERT INTO `spac_category`(`id`,`prefix`,`name`,`coefficient`,`season`) VALUES ( '9','Ž','Ženy','0.80','2009');
