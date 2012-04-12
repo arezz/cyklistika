@@ -130,6 +130,96 @@
             	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 2011 - bez úèasti</h3></td>";
             }
             // 2011 -----------------------------------------------------------
+            
+            // 2010 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            $pocetZavodu = 0;
+
+            $dotaz=sprintf("SELECT * FROM spac_results_2010 sr
+                    JOIN spac_category c ON (sr.id_category=c.id)
+                    WHERE sr.id_racer=$id_racer");
+            $vysledek = MySQL_Query($dotaz);
+            while ($zaznam = MySQL_Fetch_Array($vysledek))
+            {
+              $id=$zaznam["id"];
+              $firstnameX=$zaznam["firstname"];
+              $surnameX=$zaznam["surname"];
+              $team=$zaznam["team"];
+              $category=$zaznam["prefix"];
+              $categoryId=$zaznam["id_category"];
+              $categoryName=$zaznam["name"];
+              $totalPoints=$zaznam["total"];
+              $totalPointsBest=$zaznam["total_best_races"];
+              $r1=$zaznam["race_1"];              $r2=$zaznam["race_2"];
+              $r3=$zaznam["race_3"];              $r4=$zaznam["race_4"];
+              $r5=$zaznam["race_5"];              $r6=$zaznam["race_6"];
+              $r7=$zaznam["race_7"];              $r8=$zaznam["race_8"];
+              $r9=$zaznam["race_9"];              $r10=$zaznam["race_10"];
+              $r11=$zaznam["race_11"];            $r12=$zaznam["race_12"];
+              $r13=$zaznam["race_13"];            $r14=$zaznam["race_14"];
+              $r15=$zaznam["race_15"];            $r16=$zaznam["race_16"];
+              $r17=$zaznam["race_17"];            
+			  $pocetZavodniku=$zaznam["total_racers"]; 
+              $umisteniVKategorii=$zaznam["final_standing"];
+              $spacLicence=$zaznam["spac_licence"];
+              
+              $nejUmisteniBody = 0;
+              $nejUmisteniPoradi = 0;
+              $nejUmisteniZavod = "";
+              if ($r1 >$nejUmisteniBody) {  $nejUmisteniBody=$r1;  $nejUmisteniZavod=$raceName10_1;  $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r1); }
+              if ($r2 >$nejUmisteniBody) {  $nejUmisteniBody=$r2;  $nejUmisteniZavod=$raceName10_2;  $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r2); }
+              if ($r3 >$nejUmisteniBody) {  $nejUmisteniBody=$r3;  $nejUmisteniZavod=$raceName10_3;  $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r3); }
+              if ($r4 >$nejUmisteniBody) {  $nejUmisteniBody=$r4;  $nejUmisteniZavod=$raceName10_4;  $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r4); }
+              if (($r5-5) >$nejUmisteniBody) {  $nejUmisteniBody=($r5-5);  $nejUmisteniZavod=$raceName10_5;  $nejUmisteniPoradi=getRealStanding2010($spacLicence, ($r5-5)); }
+              if ($r6 >$nejUmisteniBody) {  $nejUmisteniBody=$r6;  $nejUmisteniZavod=$raceName10_6;  $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r6); }
+              if ($r7 >$nejUmisteniBody) {  $nejUmisteniBody=$r7;  $nejUmisteniZavod=$raceName10_7;  $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r7); }
+              if ($r8 >$nejUmisteniBody) {  $nejUmisteniBody=$r8;  $nejUmisteniZavod=$raceName10_8;  $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r8); }
+              if ($r9 >$nejUmisteniBody) {  $nejUmisteniBody=$r9;  $nejUmisteniZavod=$raceName10_9;  $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r9); }
+              if ($r10 >$nejUmisteniBody) { $nejUmisteniBody=$r10; $nejUmisteniZavod=$raceName10_10; $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r10); }
+              if ($r11 >$nejUmisteniBody) { $nejUmisteniBody=$r11; $nejUmisteniZavod=$raceName10_11; $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r11); }
+              if ($r12 >$nejUmisteniBody) { $nejUmisteniBody=$r12; $nejUmisteniZavod=$raceName10_12; $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r12); }
+              if (($r13-5) >$nejUmisteniBody) { $nejUmisteniBody=($r13-5); $nejUmisteniZavod=$raceName10_13; $nejUmisteniPoradi=getRealStanding2010($spacLicence, ($r13-5)); }
+              if ($r14 >$nejUmisteniBody) { $nejUmisteniBody=$r14; $nejUmisteniZavod=$raceName10_14; $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r14); }
+              if ($r15 >$nejUmisteniBody) { $nejUmisteniBody=$r15; $nejUmisteniZavod=$raceName10_15; $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r15); }
+              if ($r16 >$nejUmisteniBody) { $nejUmisteniBody=$r16; $nejUmisteniZavod=$raceName10_16; $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r16); }
+              if ($r17 >$nejUmisteniBody) { $nejUmisteniBody=$r17; $nejUmisteniZavod=$raceName10_17; $nejUmisteniPoradi=getRealStanding2010($spacLicence, $r17); }
+              
+              // pocet zavodu
+              if ($r1 > 0) { $pocetZavodu += 1; }
+              if ($r2 > 0) { $pocetZavodu += 1; }
+              if ($r3 > 0) { $pocetZavodu += 1; }
+              if ($r4 > 0) { $pocetZavodu += 1; }
+              if ($r5 > 0) { $pocetZavodu += 1; }
+              if ($r6 > 0) { $pocetZavodu += 1; }
+              if ($r7 > 0) { $pocetZavodu += 1; }
+              if ($r8 > 0) { $pocetZavodu += 1; }
+              if ($r9 > 0) { $pocetZavodu += 1; }
+              if ($r10 > 0) { $pocetZavodu += 1; }
+              if ($r11 > 0) { $pocetZavodu += 1; }
+              if ($r12 > 0) { $pocetZavodu += 1; }
+              if ($r13 > 0) { $pocetZavodu += 1; }
+              if ($r14 > 0) { $pocetZavodu += 1; }
+              if ($r15 > 0) { $pocetZavodu += 1; }
+              if ($r16 > 0) { $pocetZavodu += 1; }
+              if ($r17 > 0) { $pocetZavodu += 1; }
+
+              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-zavodu-2010-celkove.php?id_category=$categoryId\">Sezona 2010</a></h3></td>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Dokonèených závodù / celkem:</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$pocetZavodu / 17</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Kategorie:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$category - $categoryName</b></td>
+              	    <td style=\"text-align:right; padding-right:15px;\">Souèet bodù (10 NEJ / celkem):</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$totalPointsBest / $totalPoints</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Koneèné umístìní:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$umisteniVKategorii. / $pocetZavodniku</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Nejlepší umístìní:</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$nejUmisteniPoradi. ($nejUmisteniZavod)</b></td></tr>";
+            }
+            if ($pocetZavodu === 0) {
+            	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 2010 - bez úèasti</h3></td>";
+            }
+            // 2010 -----------------------------------------------------------
           ?>
         </table>
       </div>
