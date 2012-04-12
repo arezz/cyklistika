@@ -71,6 +71,7 @@
               $surname=$zaznam["racer_surname"];
               $team=$zaznam["racer_team"];
               $category=$zaznam["prefix"];
+              $categoryName=$zaznam["name"];
               $r1=$zaznam["race_1"];
               $r2=$zaznam["race_2"];
               $r3=$zaznam["race_3"];
@@ -95,7 +96,7 @@
               if ($categoryTmp != $category) {
                   $categoryTmp = $category;
                   echo "<tr><td colspan=\"32\"> &nbsp;</td></tr>";
-                  echo "<tr><td colspan=\"32\"> <h3>Kategorie $category</h3></td></tr>";
+                  echo "<tr><td colspan=\"32\"> <h3>Kategorie $category - $categoryName</h3></td></tr>";
                   $i=1;
               }
               if ($i % 2)

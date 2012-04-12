@@ -206,7 +206,7 @@
     $raceName09_16="Mokrolazecká 60";
     $raceName09_17="Petrovická èasovka";      
 
-	  $raceName10_1="Èasovka Staøíè";
+    $raceName10_1="Èasovka Staøíè";
     $raceName10_2="Tour de Èupek";
     $raceName10_3="Mlynáøská èasovka";
     $raceName10_4="O cenu Krnova";

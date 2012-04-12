@@ -23,40 +23,37 @@
       </div>
       <div class="content">
         <table>
-          <tr><td colspan="32" style="text-align:center; vertical-align:bottom; height:50px;"><h1>Koneèné celkové výsledky za rok 2010</h1></td></tr>
+          <tr><td colspan="32" style="text-align:center; vertical-align:bottom; height:50px;"><h1>Koneèné celkové výsledky za rok 2007</h1></td></tr>
           <?php 
            echo "<tr>
             <th style=\"text-align:center; vertical-align:bottom; width:50px;\">Poøadí</th>
             <th colspan=\"3\" style=\"text-align:center; vertical-align:bottom; width:150px;\">Pøíjmení</th>
             <th colspan=\"2\" style=\"text-align:center; vertical-align:bottom; width:150px;\">Jméno</th>
             <th colspan=\"6\" style=\"text-align:center; vertical-align:bottom; width:150px;\">Oddíl</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_1\">1.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_2\">2.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_3\">3.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_4\">4.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_5\">5.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_6\">6.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_7\">7.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_8\">8.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_9\">9.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_10\">10.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_11\">11.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_12\">12.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_13\">13.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_14\">14.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_15\">15.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_16\">16.</th>
-            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName10_17\">17.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_1\">1.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_2\">2.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_3\">3.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_4\">4.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_5\">5.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_6\">6.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_7\">7.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_8\">8.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_9\">9.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_10\">10.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_11\">11.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_12\">12.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_13\">13.</th>
+            <th style=\"text-align:center; vertical-align:bottom; width:30px;\" title=\"$raceName07_14\">14.</th>
             <th style=\"text-align:center; vertical-align:bottom; width:30px;\">Celkem</th>
-            <th colspan=\"2\" style=\"text-align:center; vertical-align:bottom; width:30px;\">Top 11</th>
+            <th colspan=\"2\" style=\"text-align:center; vertical-align:bottom; width:30px;\">Top 9</th>
           </tr>";
           
             if ($id_category === -1) {
-	            $dotaz="SELECT * FROM spac_results_2010 t
+	            $dotaz="SELECT * FROM spac_results_2007 t
 	                 JOIN spac_category c ON (t.id_category=c.id)
 	                 ORDER BY id_category, total_best_races DESC";
             } else {
-            	$dotaz="SELECT * FROM spac_results_2010 t
+            	$dotaz="SELECT * FROM spac_results_2007 t
 	                 JOIN spac_category c ON (t.id_category=c.id)
 	                 WHERE t.id_category=$id_category
 	                 ORDER BY id_category, total_best_races DESC";
@@ -87,9 +84,6 @@
               $r12=$zaznam["race_12"];
               $r13=$zaznam["race_13"];
               $r14=$zaznam["race_14"];
-              $r15=$zaznam["race_15"];
-              $r16=$zaznam["race_16"];
-              $r17=$zaznam["race_17"];
               $total=$zaznam["total"];
               $totalBest=$zaznam["total_best_races"];
 
@@ -110,23 +104,20 @@
               echo "<td colspan=\"3\" style=\"text-align:left; width:150px;\"><a href='zavodnik-profil.php?id_racer=$id_racer'>$surname</a></td>
 	                  <td colspan=\"2\" style=\"text-align:left; width:150px;\">$firstname</td>
 	                  <td colspan=\"6\" style=\"text-align:left; width:150px;\">$team</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_1\">$r1</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_2\">$r2</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_3\">$r3</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_4\">$r4</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_5\">$r5</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_6\">$r6</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_7\">$r7</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_8\">$r8</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_9\">$r9</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_10\">$r10</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_11\">$r11</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_12\">$r12</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_13\">$r13</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_14\">$r14</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_15\">$r15</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_16\">$r16</td>
-	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName10_17\">$r17</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_1\">$r1</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_2\">$r2</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_3\">$r3</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_4\">$r4</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_5\">$r5</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_6\">$r6</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_7\">$r7</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_8\">$r8</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_9\">$r9</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_10\">$r10</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_11\">$r11</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_12\">$r12</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_13\">$r13</td>
+	                  <td style=\"text-align:center; width:30px;\" title=\"$raceName07_14\">$r14</td>
 	                  <td style=\"text-align:center; width:30px;\">$total</td>
 	                  <td colspan=\"2\" style=\"text-align:center; width:30px;\">$totalBest</td>
 	                  </tr>\n\t";

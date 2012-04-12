@@ -19,10 +19,25 @@
        <center>
            <h2>Pøehled výsledkù jednotlivých závodù v letech 1998-2011</h2>
 
-		   <h3>
+		   <h2>
+           2012&nbsp;&nbsp;|&nbsp;&nbsp;
            <a href="sezona-2011.php">2011</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-           <a href="vysledky-celkove-2010.php">2010</a>
-           </h3>
+           <a href="vysledky-celkove-2010.php">2010</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+           <a href="vysledky-celkove-2009.php">2009</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+           <a href="vysledky-celkove-2008.php">2008</a>
+           </br>
+           <a href="vysledky-celkove-2007.php">2007</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+           <a href="vysledky-celkove-2006.php">2006</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+           <a href="vysledky-celkove-2005.php">2005</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+           <a href="vysledky-celkove-2004.php">2004</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+           <a href="vysledky-celkove-2003.php">2003</a>
+           </br>
+           <a href="vysledky-celkove-2002.php">2002</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+           <a href="vysledky-celkove-2001.php">2001</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+           <a href="vysledky-celkove-2000.php">2000</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+           <a href="vysledky-celkove-1999.php">1999</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+           <a href="vysledky-celkove-1998.php">1998</a>
+           </h2>
            </br></br>
            <form action="statistiky.php" method="post">      
 	          <table>        
