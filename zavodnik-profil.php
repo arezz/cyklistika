@@ -13,7 +13,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=windows-1250" />
     <meta name="generator" content="PSPad editor, www.pspad.com" />
-    <title>SPAC - statistiky</title>
+    <title>SPAC - statistiky - profil</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
@@ -66,22 +66,9 @@
               $r13=$zaznam["race_13"];            $r14=$zaznam["race_14"];
               $r15=$zaznam["race_15"];            $r16=$zaznam["race_16"];
               $r17=$zaznam["race_17"];            $r18=$zaznam["race_18"];
-
-              $dotaz2 = "SELECT COUNT(*) pocet FROM spac_results_2011
-                         WHERE id_category=$categoryId";
-              $vysledek2 = MySQL_Query($dotaz2);
-              while ($zaznam2 = MySQL_Fetch_Array($vysledek2))
-              {
-                $pocetZavodniku=$zaznam2["pocet"];
-              }
-              $dotaz3 = "SELECT COUNT(*) pocet FROM spac_results_2011
-                         WHERE id_category=$categoryId AND total_best_races>$totalPointsBest";
-              $vysledek3 = MySQL_Query($dotaz3);
-              while ($zaznam3 = MySQL_Fetch_Array($vysledek3))
-              {
-                 $umisteniVKategorii=$zaznam3["pocet"] + 1;
-              }
-
+			  $pocetZavodniku=$zaznam["total_racers"]; 
+              $umisteniVKategorii=$zaznam["final_standing"];
+              
               $nejUmisteniBody = 0;
               $nejUmisteniPoradi = 0;
               $nejUmisteniZavod = "";
