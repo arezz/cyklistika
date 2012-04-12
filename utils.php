@@ -1,5 +1,22 @@
 <?php
     
+    function getRealStanding2009($spacLicence, $points, $champ) {
+      $realPoints = 0;
+      if ($spacLicence == 1 && $champ == 1) { // mistrak vydelit 2
+          $realPoints = round($points / 2);
+      } else {
+          $realPoints = $points;
+      }
+      if ($realPoints == 40) { return 1; }
+      if ($realPoints == 38) { return 2; }
+      if ($realPoints == 36) { return 3; }
+      if ($realPoints < 36 && $realPoints > 1) {
+          return 38 - $realPoints;
+      }
+      if ($realPoints == 1) { return 37; }
+      return 0;
+    }
+    
     function getRealStanding2010($spacLicence, $points) {
       $realPoints = 0;
       if ($spacLicence == 1) { // vydelit 1.1
@@ -59,8 +76,137 @@
       if ($realPoints == 1) { return 47; }
       return 0;
     }
+    
+    $raceName98_1="BezruË";
+    $raceName98_2="Tour de »upek";
+    $raceName98_3="Kruûberk";
+    $raceName98_4="éermanice";
+    $raceName98_5="»avisov";
+    $raceName98_6="Bruöp.";
+    $raceName98_7="Jileöov.";
+    $raceName98_8="Fr˝dek-MÌstek";
+    $raceName98_9="Tour de Javorov˝";
+    $raceName98_10="Bohuslavice";
+    $raceName98_11="Mokrolazeck· 60";
+    
+    $raceName99_1="Tour de »upek";
+    $raceName99_2="Kruûberk";
+    $raceName99_3="éermanice";
+    $raceName99_4="Sk¯ipov";
+    $raceName99_5="Jileöov.";
+    $raceName99_6="Bruöp.";
+    $raceName99_7="Bohum.";
+    $raceName99_8="Bohuslavice";
+    $raceName99_9="Mokrolazeck· 60";
+    
+    $raceName00_1="Major s. Bohuslavice";
+    $raceName00_2="Tour de »upek";
+    $raceName00_3="BohumÌnsk· Ëasovka";
+    $raceName00_4="Orlov·";
+    $raceName00_5="Kruûberk";
+    $raceName00_6="éermanice";
+    $raceName00_7="Kyjov.";
+    $raceName00_8="Jileöov.";
+    $raceName00_9="Tour de Javorov˝";
+    $raceName00_10="Jump Sport";
+    $raceName00_11="Laösk· Ëasovka Bruöp.";
+    $raceName00_12="Kiss Ëas Ostr.";
+    $raceName00_13="GP Ostr.";
+    $raceName00_14="Master Prix";
+    $raceName00_15="Mokrolazeck· 60";
+    $raceName00_16="Borov·";
+    $raceName00_17="U Obrus. Bohusl.";
+    
+    $raceName03_1="Bohuslavice";
+    $raceName03_2="Ëasovka Bohuslavice";
+    $raceName03_3="Z·tiöÌ";
+    $raceName03_4="VelkopolomskÈ okruhy";
+    $raceName03_5="Mas. prix.";
+    $raceName03_6="Lipt·Ú";
+    $raceName03_7="Jump sp.";
+    $raceName03_8="éelezn˝ Drak";
+    $raceName03_9="Velk· cena ValaöskÈho Kr·lovstvÌ";
+    $raceName03_10="Mokrolazeck· 60";
+    $raceName03_11="Chr. cup";
+    
+    $raceName04_1="Bolatice";
+    $raceName04_2="Kruûberk";
+    $raceName04_3="BohumÌnsk· Ëasovka";
+    $raceName04_4="VelkopolomskÈ okruhy";
+    $raceName04_5="Tour de Javorov˝";
+    $raceName04_6="KritÈrium";
+    $raceName04_7="Ëasovka j.";
+    $raceName04_8="Lipt·Ú";
+    $raceName04_9="Ëasovka dvojic";
+    $raceName04_10="Velk· cena ValaöskÈho Kr·lovstvÌ";
+    $raceName04_11="Mokrolazeck· 60";
+    $raceName04_12="Bolatice";
+    
+    $raceName05_1="BohumÌnsk· Ëasovka";
+    $raceName05_2="VelkopolomskÈ okruhy";
+    $raceName05_3="Osobl. v˝b.";
+    $raceName05_4="Ëasovka dvojic";
+    $raceName05_5="Tour de Javorov˝";
+    $raceName05_6="Velk· cena ValaöskÈho Kr·lovstvÌ";
+    $raceName05_7="Mokrolazeck· 60";
+    
+    $raceName06_1="BohumÌnsk· Ëasovka";
+    $raceName06_2="BohumÌnsk· 5hodinovka";
+    $raceName06_3="Velk· cena ValaöskÈho Kr·lovstvÌ";
+    $raceName06_4="Ëasovka Klapka";
+    $raceName06_5="BohumÌnsk˝ dvojboj";
+    
+    $raceName07_1="Tour de »upek";
+    $raceName07_2="BohumÌnsk· Ëasovka";
+    $raceName07_3="VelkopolomskÈ okruhy";
+    $raceName07_4="Tour de Javorov˝";
+    $raceName07_5="FT";
+    $raceName07_6="Krnovsk˝ Goof·k";
+    $raceName07_7="éelezn˝ Drak";
+    $raceName07_8="BohumÌnsk· 5hodinovka";
+    $raceName07_9="Velk· cena Laöska";
+    $raceName07_10="Paskovsk˝ kriù·k";
+    $raceName07_11="Mokrolazeck· 60";
+    $raceName07_12="Petrovick· Ëasovka";
+    $raceName07_13="BohumÌnsk˝ dvojboj";
+    $raceName07_14="Ëas";
+    
+    $raceName08_1="O cenu Krnova";
+    $raceName08_2="BohumÌnsk˝ dvojboj";
+    $raceName08_3="Tour de Javorov˝";
+    $raceName08_4="Krnovsk˝ Goof·k";
+    $raceName08_5="Memori·l Aloise Dohnala";
+    $raceName08_6="KritÈrium Star· Ves";
+    $raceName08_7="éelezn˝ Drak";
+    $raceName08_8="Klimkovick· Ëasovka";
+    $raceName08_9="BohumÌnsk· 5hodinovka";
+    $raceName08_10="VelkopolomskÈ okruhy"; 
+    $raceName08_11="Stonavsk· Ëasovka (MistrovstvÌ SPAC)";
+    $raceName08_12="Velk· cena Laöska";
+    $raceName08_13="Paskovsk˝ kriù·k";
+    $raceName08_14="Mokrolazeck· 60 (MistrovstvÌ SPAC)";
+    $raceName08_15="Petrovick· Ëasovka";
+    $raceName08_16="Tour de »upek";
+    
+    $raceName09_1="»asovka Sta¯ÌË";
+    $raceName09_2="Mlyn·¯sk· Ëasovka";
+    $raceName09_3="O cenu Krnova";
+    $raceName09_4="BohumÌnsk· Ëasovka";
+    $raceName09_5="VelkopolomskÈ okruhy (MistrovstvÌ SPAC)";
+    $raceName09_6="Tour de S·dek";
+    $raceName09_7="Tour de Javorov˝";
+    $raceName09_8="Memori·l Aloise Dohnala";
+    $raceName09_9="MR SAC Ëasovka";
+    $raceName09_10="MR SAC silnice";
+    $raceName09_11="Bartoöovice";
+    $raceName09_12="BohumÌnsk· 5hodinovka";
+    $raceName09_13="Stonavsk· Ëasovka (MistrovstvÌ SPAC)";
+    $raceName09_14="Velk· cena Laöska";
+    $raceName09_15="Paskovsk˝ kriù·k";
+    $raceName09_16="Mokrolazeck· 60";
+    $raceName09_17="Petrovick· Ëasovka";      
 
-	$raceName10_1="»asovka Sta¯ÌË";
+	  $raceName10_1="»asovka Sta¯ÌË";
     $raceName10_2="Tour de »upek";
     $raceName10_3="Mlyn·¯sk· Ëasovka";
     $raceName10_4="O cenu Krnova";
