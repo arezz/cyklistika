@@ -17,7 +17,7 @@
       <div class="content">
        <center>
            </br>
-           <a href='vysledky-zavodu-2011-celkove.php'><h2>Koneèné celkové výsledky za rok 2011</h2></a> </br>
+           <a href='vysledky-celkove-2011.php'><h2>Koneèné celkové výsledky za rok 2011</h2></a> </br>
 
            <h2>Výsledky jednotlivých závodù v roce 2011</h2>
 

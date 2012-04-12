@@ -112,7 +112,7 @@
               if ($r18 > 0) { $pocetZavodu += 1; }
 
 
-              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-zavodu-2011-celkove.php?id_category=$categoryId\">Sezona 2011</a></h3></td>";
+              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-celkove-2011.php?id_category=$categoryId\">Sezona 2011</a></h3></td>";
               echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
                     <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td>
               		<td style=\"text-align:right; padding-right:15px;\">Dokonèených závodù / celkem:</td>
@@ -127,11 +127,11 @@
                     <td style=\"text-align:left; padding-left:15px;\"><b>$nejUmisteniPoradi. ($nejUmisteniZavod)</b></td></tr>";
             }
             if ($pocetZavodu === 0) {
-            	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 2011 - bez úèasti</h3></td>";
+            	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 2011 - bez úèasti nebo úèast bez licence</h3></td>";
             }
             // 2011 -----------------------------------------------------------
             
-            // 2010 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            // 2010 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             $pocetZavodu = 0;
 
             $dotaz=sprintf("SELECT * FROM spac_results_2010 sr
@@ -202,7 +202,7 @@
               if ($r16 > 0) { $pocetZavodu += 1; }
               if ($r17 > 0) { $pocetZavodu += 1; }
 
-              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-zavodu-2010-celkove.php?id_category=$categoryId\">Sezona 2010</a></h3></td>";
+              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-celkove-2010.php?id_category=$categoryId\">Sezona 2010</a></h3></td>";
               echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
                     <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td>
               		<td style=\"text-align:right; padding-right:15px;\">Dokonèených závodù / celkem:</td>

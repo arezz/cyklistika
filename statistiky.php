@@ -21,7 +21,7 @@
 
 		   <h3>
            <a href="sezona-2011.php">2011</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-           <a href="sezona-2011.php">TODO 2010</a>
+           <a href="vysledky-celkove-2010.php">2010</a>
            </h3>
            </br></br>
            <form action="statistiky.php" method="post">      
