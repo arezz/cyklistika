@@ -1,5 +1,28 @@
 <?php
-    
+
+    function getRealStanding2005($points) {
+      if ($points == 15) { return 1; }
+      if ($points == 14) { return 1; }
+      if ($points == 12) { return 2; }
+      if ($points == 10) { return 3; }
+      if ($points == 8) { return 4; }
+      if ($points < 8 && $points > 1) {
+          return 12 - $points;
+      }
+      if ($points == 1) { return 11; }
+      return 0;
+    }
+
+    function getRealStanding2006($points) {
+      if ($points == 8) { return 1; }
+      if ($points == 6) { return 2; }
+      if ($points == 4) { return 3; }
+      if ($points == 3) { return 4; }
+      if ($points == 2) { return 5; }
+      if ($points == 1) { return 6; }
+      return 0;
+    }
+
     function getRealStanding2009($spacLicence, $points, $champ) {
       $realPoints = 0;
       if ($spacLicence == 1 && $champ == 1) { // mistrak vydelit 2
