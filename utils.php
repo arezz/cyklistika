@@ -1,5 +1,81 @@
 <?php
 
+    function getRealStanding2000($categoryId, $points) {
+      if ($categoryId == 1) { // 59,57,55,53,52,...
+         if ($points == 59) { return 1; }
+         if ($points == 57) { return 2; }
+         if ($points == 55) { return 3; }
+         if ($points < 55 && $points > 1) {
+            return 57 - $points;
+         }
+         if ($points == 1) { return 56; }
+         return 0;
+      } else if ($categoryId == 2) { // 38,36,34,32,31,...
+         if ($points == 38) { return 1; }
+         if ($points == 36) { return 2; }
+         if ($points == 34) { return 3; }
+         if ($points < 34 && $points > 1) {
+            return 36 - $points;
+         }
+         if ($points == 1) { return 35; }
+         return 0;
+      } else if ($categoryId == 3) { // 32,30,28,26,25,...
+         if ($points == 32) { return 1; }
+         if ($points == 30) { return 2; }
+         if ($points == 28) { return 3; }
+         if ($points < 28 && $points > 1) {
+            return 30 - $points;
+         }
+         if ($points == 1) { return 29; }
+         return 0;
+      } else if ($categoryId == 4) { // 17,15,13,11,10,...
+         if ($points == 17) { return 1; }
+         if ($points == 15) { return 2; }
+         if ($points == 13) { return 3; }
+         if ($points < 13 && $points > 1) {
+            return 15 - $points;
+         }
+         if ($points == 1) { return 14; }
+         return 0;
+      } else if ($categoryId == 5) { // 7,5,3,1
+         if ($points == 7) { return 1; }
+         if ($points == 5) { return 2; }
+         if ($points == 3) { return 3; }
+         if ($points == 1) { return 4; }
+         return 0;
+      } else if ($categoryId == 9) { // 9,7,5,3,2,1
+         if ($points == 9) { return 1; }
+         if ($points == 7) { return 2; }
+         if ($points == 5) { return 3; }
+         if ($points == 3) { return 4; }
+         if ($points == 2) { return 5; }
+         if ($points == 1) { return 6; }
+         return 0;
+      } 
+      return 0;
+    }
+
+    function getRealStanding2004($maxPoints, $points) {
+      $realPoints = 0;
+      if ($maxPoints == 30) { // MCR SAC
+          $realPoints = $points / 2;
+      } else {
+          $realPoints = $points;
+      }
+      if ($realPoints == 15) { return 1; }
+      if ($realPoints == 12) { return 2; }
+      if ($realPoints == 10) { return 3; }
+      if ($realPoints == 8) { return 4; }
+      if ($realPoints == 7) { return 5; }
+      if ($realPoints == 6) { return 6; }
+      if ($realPoints == 5) { return 7; }
+      if ($realPoints == 4) { return 8; }
+      if ($realPoints == 3) { return 9; }
+      if ($realPoints == 2) { return 10; }
+      if ($realPoints == 1) { return 11; }
+      return 0;
+    }
+
     function getRealStanding2005($points) {
       if ($points == 15) { return 1; }
       if ($points == 14) { return 1; }

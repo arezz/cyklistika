@@ -447,6 +447,7 @@
               if ($r10 >$nejUmisteniBody) { $nejUmisteniBody=$r10; $nejUmisteniZavod=$raceName07_10; $nejUmisteniPoradi=getRealStanding2011(40, $r10); }
               if ($r11 >$nejUmisteniBody) { $nejUmisteniBody=$r11; $nejUmisteniZavod=$raceName07_11; $nejUmisteniPoradi=getRealStanding2011(40, $r11); }
               if ($r12 >$nejUmisteniBody) { $nejUmisteniBody=$r12; $nejUmisteniZavod=$raceName07_12; $nejUmisteniPoradi=getRealStanding2011(40, $r12); }
+              if ($r13 >$nejUmisteniBody) { $nejUmisteniBody=$r13; $nejUmisteniZavod=$raceName07_13; $nejUmisteniPoradi=getRealStanding2011(40, $r13); }
               if ($r14 >$nejUmisteniBody) { $nejUmisteniBody=$r14; $nejUmisteniZavod=$raceName07_14; $nejUmisteniPoradi=getRealStanding2011(40, $r14); }
               
               // pocet zavodu
@@ -539,7 +540,7 @@
             }
             if ($pocetZavodu === 0) {
             	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 2006 - bez úèasti</h3></td>";
-            }
+            }            
             // 2006 -----------------------------------------------------------
 
             // 2005 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -606,6 +607,425 @@
             }
             // 2005 -----------------------------------------------------------
 
+            // 2004 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            $pocetZavodu = 0;
+            $dotaz=sprintf("SELECT * FROM spac_results_2004 sr
+                    JOIN spac_category c ON (sr.id_category=c.id)
+                    WHERE sr.id_racer=$id_racer");
+            $vysledek = MySQL_Query($dotaz);
+            while ($zaznam = MySQL_Fetch_Array($vysledek))
+            {
+              $pocetZavodu = 0;
+              $id=$zaznam["id"];
+              $firstnameX=$zaznam["firstname"];
+              $surnameX=$zaznam["surname"];
+              $team=$zaznam["team"];
+              $category=$zaznam["prefix"];
+              $categoryId=$zaznam["id_category"];
+              $categoryName=$zaznam["name"];
+              $totalPoints=$zaznam["total"];
+              $totalPointsBest=$zaznam["total_best_races"];
+              $r1=$zaznam["race_1"];              $r2=$zaznam["race_2"];
+              $r3=$zaznam["race_3"];              $r4=$zaznam["race_4"];
+              $r5=$zaznam["race_5"];              $r6=$zaznam["race_6"];
+              $r7=$zaznam["race_7"];              $r8=$zaznam["race_8"];
+              $r9=$zaznam["race_9"];              $r10=$zaznam["race_10"];
+              $r11=$zaznam["race_11"];            $r12=$zaznam["race_12"];
+	      $pocetZavodniku=$zaznam["total_racers"];
+              $umisteniVKategorii=$zaznam["final_standing"];
+
+              $nejUmisteniBody = 0;
+              $nejUmisteniPoradi = 0;
+              $nejUmisteniZavod = "";
+              if ($r1 >$nejUmisteniBody) {  $nejUmisteniBody=$r1;  $nejUmisteniZavod=$raceName04_1;  $nejUmisteniPoradi=getRealStanding2004(15, $r1); }
+              if ($r2 >$nejUmisteniBody) {  $nejUmisteniBody=$r2;  $nejUmisteniZavod=$raceName04_2;  $nejUmisteniPoradi=getRealStanding2004(15, $r2); }
+              if ($r3/2 >$nejUmisteniBody) {  $nejUmisteniBody=$r3/2;  $nejUmisteniZavod=$raceName04_3;  $nejUmisteniPoradi=getRealStanding2004(30, $r3); }
+              if ($r4 >$nejUmisteniBody) {  $nejUmisteniBody=$r4;  $nejUmisteniZavod=$raceName04_4;  $nejUmisteniPoradi=getRealStanding2004(15, $r4); }
+              if ($r5 >$nejUmisteniBody) {  $nejUmisteniBody=$r5;  $nejUmisteniZavod=$raceName04_5;  $nejUmisteniPoradi=getRealStanding2004(15, $r5); }
+              if ($r6 >$nejUmisteniBody) {  $nejUmisteniBody=$r6;  $nejUmisteniZavod=$raceName04_6;  $nejUmisteniPoradi=getRealStanding2004(15, $r6); }
+              if ($r7 >$nejUmisteniBody) {  $nejUmisteniBody=$r7;  $nejUmisteniZavod=$raceName04_7;  $nejUmisteniPoradi=getRealStanding2004(15, $r7); }
+              if ($r8/2 >$nejUmisteniBody) {  $nejUmisteniBody=$r8/2;  $nejUmisteniZavod=$raceName04_8;  $nejUmisteniPoradi=getRealStanding2004(30, $r8); }
+              if ($r9 >$nejUmisteniBody) {  $nejUmisteniBody=$r9;  $nejUmisteniZavod=$raceName04_9;  $nejUmisteniPoradi=getRealStanding2004(15, $r9); }
+              if ($r10 >$nejUmisteniBody) { $nejUmisteniBody=$r10; $nejUmisteniZavod=$raceName04_10; $nejUmisteniPoradi=getRealStanding2004(15, $r10); }
+              if ($r11 >$nejUmisteniBody) { $nejUmisteniBody=$r11; $nejUmisteniZavod=$raceName04_11; $nejUmisteniPoradi=getRealStanding2004(15, $r11); }
+              if ($r12/2 >$nejUmisteniBody) { $nejUmisteniBody=$r12/2; $nejUmisteniZavod=$raceName04_12; $nejUmisteniPoradi=getRealStanding2004(30, $r12); }
+              
+              // pocet zavodu
+              if ($r1 > 0) { $pocetZavodu += 1; }
+              if ($r2 > 0) { $pocetZavodu += 1; }
+              if ($r3 > 0) { $pocetZavodu += 1; }
+              if ($r4 > 0) { $pocetZavodu += 1; }
+              if ($r5 > 0) { $pocetZavodu += 1; }
+              if ($r6 > 0) { $pocetZavodu += 1; }
+              if ($r7 > 0) { $pocetZavodu += 1; }
+              if ($r8 > 0) { $pocetZavodu += 1; }
+              if ($r9 > 0) { $pocetZavodu += 1; }
+              if ($r10 > 0) { $pocetZavodu += 1; }
+              if ($r11 > 0) { $pocetZavodu += 1; }
+              if ($r12 > 0) { $pocetZavodu += 1; }
+
+              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-celkove-2004.php?id_category=$categoryId\">Sezona 2004</a></h3></td>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Dokonèených závodù / celkem:</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$pocetZavodu / 12</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Kategorie:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$category - $categoryName</b></td>
+              	    <td style=\"text-align:right; padding-right:15px;\">Souèet bodù (9 NEJ / celkem):</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$totalPointsBest / $totalPoints</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Koneèné umístìní:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$umisteniVKategorii. / $pocetZavodniku</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Nejlepší umístìní:</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$nejUmisteniPoradi. ($nejUmisteniZavod)</b></td></tr>";
+            }
+            if ($pocetZavodu === 0) {
+            	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 2004 - bez úèasti</h3></td>";
+            }
+            // 2004 -----------------------------------------------------------
+
+            // 2003 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            $pocetZavodu = 0;
+            $dotaz=sprintf("SELECT * FROM spac_results_2003 sr
+                    JOIN spac_category c ON (sr.id_category=c.id)
+                    WHERE sr.id_racer=$id_racer");
+            $vysledek = MySQL_Query($dotaz);
+            while ($zaznam = MySQL_Fetch_Array($vysledek))
+            {
+              $pocetZavodu = 0;
+              $id=$zaznam["id"];
+              $firstnameX=$zaznam["firstname"];
+              $surnameX=$zaznam["surname"];
+              $team=$zaznam["team"];
+              $category=$zaznam["prefix"];
+              $categoryId=$zaznam["id_category"];
+              $categoryName=$zaznam["name"];
+              $totalPoints=$zaznam["total"];
+              $totalPointsBest=$zaznam["total_best_races"];
+              $r1=$zaznam["race_1"];              $r2=$zaznam["race_2"];
+              $r3=$zaznam["race_3"];              $r4=$zaznam["race_4"];
+              $r5=$zaznam["race_5"];              $r6=$zaznam["race_6"];
+              $r7=$zaznam["race_7"];              $r8=$zaznam["race_8"];
+              $r9=$zaznam["race_9"];              $r10=$zaznam["race_10"];
+              $r11=$zaznam["race_11"];
+	      $pocetZavodniku=$zaznam["total_racers"];
+              $umisteniVKategorii=$zaznam["final_standing"];
+
+              $nejUmisteniBody = 0;
+              $nejUmisteniPoradi = 0;
+              $nejUmisteniZavod = "";
+              if ($r1 >$nejUmisteniBody) {  $nejUmisteniBody=$r1;  $nejUmisteniZavod=$raceName03_1;  $nejUmisteniPoradi=getRealStanding2004(15, $r1); }
+              if ($r2 >$nejUmisteniBody) {  $nejUmisteniBody=$r2;  $nejUmisteniZavod=$raceName03_2;  $nejUmisteniPoradi=getRealStanding2004(15, $r2); }
+              if ($r3 >$nejUmisteniBody) {  $nejUmisteniBody=$r3;  $nejUmisteniZavod=$raceName03_3;  $nejUmisteniPoradi=getRealStanding2004(15, $r3); }
+              if ($r4 >$nejUmisteniBody) {  $nejUmisteniBody=$r4;  $nejUmisteniZavod=$raceName03_4;  $nejUmisteniPoradi=getRealStanding2004(15, $r4); }
+              if ($r5/2 >$nejUmisteniBody) {  $nejUmisteniBody=$r5/2;  $nejUmisteniZavod=$raceName03_5;  $nejUmisteniPoradi=getRealStanding2004(30, $r5); }
+              if ($r6 >$nejUmisteniBody) {  $nejUmisteniBody=$r6;  $nejUmisteniZavod=$raceName03_6;  $nejUmisteniPoradi=getRealStanding2004(15, $r6); }
+              if ($r7 >$nejUmisteniBody) {  $nejUmisteniBody=$r7;  $nejUmisteniZavod=$raceName03_7;  $nejUmisteniPoradi=getRealStanding2004(15, $r7); }
+              if ($r8 >$nejUmisteniBody) {  $nejUmisteniBody=$r8;  $nejUmisteniZavod=$raceName03_8;  $nejUmisteniPoradi=getRealStanding2004(15, $r8); }
+              if ($r9 >$nejUmisteniBody) {  $nejUmisteniBody=$r9;  $nejUmisteniZavod=$raceName03_9;  $nejUmisteniPoradi=getRealStanding2004(15, $r9); }
+              if ($r10 >$nejUmisteniBody) { $nejUmisteniBody=$r10; $nejUmisteniZavod=$raceName03_10; $nejUmisteniPoradi=getRealStanding2004(15, $r10); }
+              if ($r11 >$nejUmisteniBody) { $nejUmisteniBody=$r11; $nejUmisteniZavod=$raceName03_11; $nejUmisteniPoradi=getRealStanding2004(15, $r11); }
+              
+              // pocet zavodu
+              if ($r1 > 0) { $pocetZavodu += 1; }
+              if ($r2 > 0) { $pocetZavodu += 1; }
+              if ($r3 > 0) { $pocetZavodu += 1; }
+              if ($r4 > 0) { $pocetZavodu += 1; }
+              if ($r5 > 0) { $pocetZavodu += 1; }
+              if ($r6 > 0) { $pocetZavodu += 1; }
+              if ($r7 > 0) { $pocetZavodu += 1; }
+              if ($r8 > 0) { $pocetZavodu += 1; }
+              if ($r9 > 0) { $pocetZavodu += 1; }
+              if ($r10 > 0) { $pocetZavodu += 1; }
+              if ($r11 > 0) { $pocetZavodu += 1; }
+
+              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-celkove-2003.php?id_category=$categoryId\">Sezona 2003</a></h3></td>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Dokonèených závodù / celkem:</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$pocetZavodu / 11</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Kategorie:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$category - $categoryName</b></td>
+              	    <td style=\"text-align:right; padding-right:15px;\">Souèet bodù (7 NEJ / celkem):</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$totalPointsBest / $totalPoints</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Koneèné umístìní:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$umisteniVKategorii. / $pocetZavodniku</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Nejlepší umístìní:</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$nejUmisteniPoradi. ($nejUmisteniZavod)</b></td></tr>";
+            }
+            if ($pocetZavodu === 0) {
+            	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 2003 - bez úèasti</h3></td>";
+            }
+            // 2003 -----------------------------------------------------------
+
+            // 2002 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            $pocetZavodu = 0;
+            $dotaz=sprintf("SELECT * FROM spac_results_2002 sr
+                    JOIN spac_category c ON (sr.id_category=c.id)
+                    WHERE sr.id_racer=$id_racer");
+            $vysledek = MySQL_Query($dotaz);
+            while ($zaznam = MySQL_Fetch_Array($vysledek))
+            {
+              $pocetZavodu = 0;
+              $id=$zaznam["id"];
+              $firstnameX=$zaznam["firstname"];
+              $surnameX=$zaznam["surname"];
+              $team=$zaznam["team"];
+              $category=$zaznam["prefix"];
+              $categoryId=$zaznam["id_category"];
+              $categoryName=$zaznam["name"];
+              $totalPoints=$zaznam["total"];
+              $pocetZavodniku=$zaznam["total_racers"];
+              $umisteniVKategorii=$zaznam["final_standing"];
+
+              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-celkove-2002.php?id_category=$categoryId\">Sezona 2002</a></h3></td>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Koneèné umístìní:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$umisteniVKategorii. / $pocetZavodniku</b></td>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Kategorie:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$category - $categoryName</b></td>
+              	    <td style=\"text-align:right; padding-right:15px;\">Celkem bodù:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$totalPoints</b></td></tr>";
+            }
+            if ($pocetZavodu === 0 && $totalPoints === 0) {
+            	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 2002 - bez úèasti</h3></td>";
+            }
+            // 2002 -----------------------------------------------------------
+
+            // 2001 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            $pocetZavodu = 0;
+            $dotaz=sprintf("SELECT * FROM spac_results_2001 sr
+                    JOIN spac_category c ON (sr.id_category=c.id)
+                    WHERE sr.id_racer=$id_racer");
+            $vysledek = MySQL_Query($dotaz);
+            while ($zaznam = MySQL_Fetch_Array($vysledek))
+            {
+              $pocetZavodu = 0;
+              $id=$zaznam["id"];
+              $firstnameX=$zaznam["firstname"];
+              $surnameX=$zaznam["surname"];
+              $team=$zaznam["team"];
+              $category=$zaznam["prefix"];
+              $categoryId=$zaznam["id_category"];
+              $categoryName=$zaznam["name"];
+              $totalPoints=$zaznam["total"];
+              $pocetZavodniku=$zaznam["total_racers"];
+              $umisteniVKategorii=$zaznam["final_standing"];
+
+              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-celkove-2001.php?id_category=$categoryId\">Sezona 2001</a></h3></td>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Koneèné umístìní:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$umisteniVKategorii. / $pocetZavodniku</b></td>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Kategorie:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$category - $categoryName</b></td>
+              	    <td style=\"text-align:right; padding-right:15px;\">Celkem bodù:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$totalPoints</b></td></tr>";
+            }
+            if ($pocetZavodu === 0 && $totalPoints === 0) {
+            	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 2001 - bez úèasti</h3></td>";
+            }
+            // 2001 -----------------------------------------------------------
+
+            // 2000 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            $pocetZavodu = 0;
+            $dotaz=sprintf("SELECT * FROM spac_results_2000 sr
+                    JOIN spac_category c ON (sr.id_category=c.id)
+                    WHERE sr.id_racer=$id_racer");
+            $vysledek = MySQL_Query($dotaz);
+            while ($zaznam = MySQL_Fetch_Array($vysledek))
+            {
+              $pocetZavodu = 0;
+              $id=$zaznam["id"];
+              $firstnameX=$zaznam["firstname"];
+              $surnameX=$zaznam["surname"];
+              $team=$zaznam["team"];
+              $category=$zaznam["prefix"];
+              $categoryId=$zaznam["id_category"];
+              $categoryName=$zaznam["name"];
+              $totalPoints=$zaznam["total"];
+              $totalPointsBest=$zaznam["total_best_races"];
+              $r1=$zaznam["race_1"];              $r2=$zaznam["race_2"];
+              $r3=$zaznam["race_3"];              $r4=$zaznam["race_4"];
+              $r5=$zaznam["race_5"];              $r6=$zaznam["race_6"];
+              $r7=$zaznam["race_7"];              $r8=$zaznam["race_8"];
+              $r9=$zaznam["race_9"];              $r10=$zaznam["race_10"];
+              $r11=$zaznam["race_11"];            $r12=$zaznam["race_12"];
+              $r13=$zaznam["race_13"];            $r14=$zaznam["race_14"];
+              $r15=$zaznam["race_15"];            $r16=$zaznam["race_16"];
+              $r17=$zaznam["race_17"];
+	      $pocetZavodniku=$zaznam["total_racers"];
+              $umisteniVKategorii=$zaznam["final_standing"];
+
+              $nejUmisteniBody = 0;
+              $nejUmisteniPoradi = 0;
+              $nejUmisteniZavod = "";
+              if ($r1 >$nejUmisteniBody) {  $nejUmisteniBody=$r1;  $nejUmisteniZavod=$raceName00_1;  $nejUmisteniPoradi=getRealStanding2000($categoryId, $r1); }
+              if ($r2 >$nejUmisteniBody) {  $nejUmisteniBody=$r2;  $nejUmisteniZavod=$raceName00_2;  $nejUmisteniPoradi=getRealStanding2000($categoryId, $r2); }
+              if ($r3 >$nejUmisteniBody) {  $nejUmisteniBody=$r3;  $nejUmisteniZavod=$raceName00_3;  $nejUmisteniPoradi=getRealStanding2000($categoryId, $r3); }
+              if ($r4 >$nejUmisteniBody) {  $nejUmisteniBody=$r4;  $nejUmisteniZavod=$raceName00_4;  $nejUmisteniPoradi=getRealStanding2000($categoryId, $r4); }
+              if ($r5 >$nejUmisteniBody) {  $nejUmisteniBody=$r5;  $nejUmisteniZavod=$raceName00_5;  $nejUmisteniPoradi=getRealStanding2000($categoryId, $r5); }
+              if ($r6 >$nejUmisteniBody) {  $nejUmisteniBody=$r6;  $nejUmisteniZavod=$raceName00_6;  $nejUmisteniPoradi=getRealStanding2000($categoryId, $r6); }
+              if ($r7 >$nejUmisteniBody) {  $nejUmisteniBody=$r7;  $nejUmisteniZavod=$raceName00_7;  $nejUmisteniPoradi=getRealStanding2000($categoryId, $r7); }
+              if ($r8 >$nejUmisteniBody) {  $nejUmisteniBody=$r8;  $nejUmisteniZavod=$raceName00_8;  $nejUmisteniPoradi=getRealStanding2000($categoryId, $r8); }
+              if ($r9 >$nejUmisteniBody) {  $nejUmisteniBody=$r9;  $nejUmisteniZavod=$raceName00_9;  $nejUmisteniPoradi=getRealStanding2000($categoryId, $r9); }
+              if ($r10 >$nejUmisteniBody) { $nejUmisteniBody=$r10; $nejUmisteniZavod=$raceName00_10; $nejUmisteniPoradi=getRealStanding2000($categoryId, $r10); }
+              if ($r11 >$nejUmisteniBody) { $nejUmisteniBody=$r11; $nejUmisteniZavod=$raceName00_11; $nejUmisteniPoradi=getRealStanding2000($categoryId, $r11); }
+              if ($r12 >$nejUmisteniBody) { $nejUmisteniBody=$r12; $nejUmisteniZavod=$raceName00_12; $nejUmisteniPoradi=getRealStanding2000($categoryId, $r12); }
+              if ($r13 >$nejUmisteniBody) { $nejUmisteniBody=$r13; $nejUmisteniZavod=$raceName00_13; $nejUmisteniPoradi=getRealStanding2000($categoryId, $r13); }
+              if ($r14 >$nejUmisteniBody) { $nejUmisteniBody=$r14; $nejUmisteniZavod=$raceName00_14; $nejUmisteniPoradi=getRealStanding2000($categoryId, $r14); }
+              if ($r15 >$nejUmisteniBody) { $nejUmisteniBody=$r15; $nejUmisteniZavod=$raceName00_15; $nejUmisteniPoradi=getRealStanding2000($categoryId, $r15); }
+              if ($r16 >$nejUmisteniBody) { $nejUmisteniBody=$r16; $nejUmisteniZavod=$raceName00_16; $nejUmisteniPoradi=getRealStanding2000($categoryId, $r16); }
+              if ($r17 >$nejUmisteniBody) { $nejUmisteniBody=$r17; $nejUmisteniZavod=$raceName00_17; $nejUmisteniPoradi=getRealStanding2000($categoryId, $r17); }
+
+              // pocet zavodu
+              if ($r1 > 0) { $pocetZavodu += 1; }
+              if ($r2 > 0) { $pocetZavodu += 1; }
+              if ($r3 > 0) { $pocetZavodu += 1; }
+              if ($r4 > 0) { $pocetZavodu += 1; }
+              if ($r5 > 0) { $pocetZavodu += 1; }
+              if ($r6 > 0) { $pocetZavodu += 1; }
+              if ($r7 > 0) { $pocetZavodu += 1; }
+              if ($r8 > 0) { $pocetZavodu += 1; }
+              if ($r9 > 0) { $pocetZavodu += 1; }
+              if ($r10 > 0) { $pocetZavodu += 1; }
+              if ($r11 > 0) { $pocetZavodu += 1; }
+              if ($r12 > 0) { $pocetZavodu += 1; }
+              if ($r13 > 0) { $pocetZavodu += 1; }
+              if ($r14 > 0) { $pocetZavodu += 1; }
+              if ($r15 > 0) { $pocetZavodu += 1; }
+              if ($r16 > 0) { $pocetZavodu += 1; }
+              if ($r17 > 0) { $pocetZavodu += 1; }
+
+              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-celkove-2000.php?id_category=$categoryId\">Sezona 2000</a></h3></td>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Dokonèených závodù / celkem:</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$pocetZavodu / 17</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Kategorie:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$category - $categoryName</b></td>
+              	    <td style=\"text-align:right; padding-right:15px;\">Souèet bodù (12 NEJ / celkem):</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$totalPointsBest / $totalPoints</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Koneèné umístìní:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$umisteniVKategorii. / $pocetZavodniku</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Nejlepší umístìní:</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$nejUmisteniPoradi. ($nejUmisteniZavod)</b></td></tr>";
+            }
+            if ($pocetZavodu === 0) {
+            	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 2000 - bez úèasti</h3></td>";
+            }
+            // 2000 -----------------------------------------------------------
+
+            // 1999 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            $pocetZavodu = 0;
+            $dotaz=sprintf("SELECT * FROM spac_results_1999 sr
+                    JOIN spac_category c ON (sr.id_category=c.id)
+                    WHERE sr.id_racer=$id_racer");
+            $vysledek = MySQL_Query($dotaz);
+            while ($zaznam = MySQL_Fetch_Array($vysledek))
+            {
+              $pocetZavodu = 0;
+              $id=$zaznam["id"];
+              $firstnameX=$zaznam["firstname"];
+              $surnameX=$zaznam["surname"];
+              $team=$zaznam["team"];
+              $category=$zaznam["prefix"];
+              $categoryId=$zaznam["id_category"];
+              $categoryName=$zaznam["name"];
+              $totalPoints=$zaznam["total"];
+              $totalPointsBest=$zaznam["total_best_races"];
+              $r1=$zaznam["race_1"];              $r2=$zaznam["race_2"];
+              $r3=$zaznam["race_3"];              $r4=$zaznam["race_4"];
+              $r5=$zaznam["race_5"];              $r6=$zaznam["race_6"];
+              $r7=$zaznam["race_7"];              $r8=$zaznam["race_8"];
+              $r9=$zaznam["race_9"];              $r10=$zaznam["race_10"];
+              $r11=$zaznam["race_11"];
+	      $pocetZavodniku=$zaznam["total_racers"];
+              $umisteniVKategorii=$zaznam["final_standing"];
+
+              // pocet zavodu
+              if ($r1 > 0) { $pocetZavodu += 1; }
+              if ($r2 > 0) { $pocetZavodu += 1; }
+              if ($r3 > 0) { $pocetZavodu += 1; }
+              if ($r4 > 0) { $pocetZavodu += 1; }
+              if ($r5 > 0) { $pocetZavodu += 1; }
+              if ($r6 > 0) { $pocetZavodu += 1; }
+              if ($r7 > 0) { $pocetZavodu += 1; }
+              if ($r8 > 0) { $pocetZavodu += 1; }
+              if ($r9 > 0) { $pocetZavodu += 1; }
+              if ($r10 > 0) { $pocetZavodu += 1; }
+              if ($r11 > 0) { $pocetZavodu += 1; }
+              
+              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-celkove-1999.php?id_category=$categoryId\">Sezona 1999</a></h3></td>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Dokonèených závodù / celkem:</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$pocetZavodu / 9</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Kategorie:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$category - $categoryName</b></td>
+              	    <td style=\"text-align:right; padding-right:15px;\">Souèet bodù (6 NEJ / celkem):</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$totalPointsBest / $totalPoints</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Koneèné umístìní:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$umisteniVKategorii. / $pocetZavodniku</b></td>";
+            }
+            if ($pocetZavodu === 0) {
+            	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 1999 - bez úèasti</h3></td>";
+            }
+            // 1999 -----------------------------------------------------------
+
+            // 1998 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            $pocetZavodu = 0;
+            $dotaz=sprintf("SELECT * FROM spac_results_1998 sr
+                    JOIN spac_category c ON (sr.id_category=c.id)
+                    WHERE sr.id_racer=$id_racer");
+            $vysledek = MySQL_Query($dotaz);
+            while ($zaznam = MySQL_Fetch_Array($vysledek))
+            {
+              $pocetZavodu = 0;
+              $id=$zaznam["id"];
+              $firstnameX=$zaznam["firstname"];
+              $surnameX=$zaznam["surname"];
+              $team=$zaznam["team"];
+              $category=$zaznam["prefix"];
+              $categoryId=$zaznam["id_category"];
+              $categoryName=$zaznam["name"];
+              $totalPoints=$zaznam["total"];
+              $totalPointsBest=$zaznam["total_best_races"];
+              $r1=$zaznam["race_1"];              $r2=$zaznam["race_2"];
+              $r3=$zaznam["race_3"];              $r4=$zaznam["race_4"];
+              $r5=$zaznam["race_5"];              $r6=$zaznam["race_6"];
+              $r7=$zaznam["race_7"];              $r8=$zaznam["race_8"];
+              $r9=$zaznam["race_9"];
+	      $pocetZavodniku=$zaznam["total_racers"];
+              $umisteniVKategorii=$zaznam["final_standing"];
+
+              // pocet zavodu
+              if ($r1 > 0) { $pocetZavodu += 1; }
+              if ($r2 > 0) { $pocetZavodu += 1; }
+              if ($r3 > 0) { $pocetZavodu += 1; }
+              if ($r4 > 0) { $pocetZavodu += 1; }
+              if ($r5 > 0) { $pocetZavodu += 1; }
+              if ($r6 > 0) { $pocetZavodu += 1; }
+              if ($r7 > 0) { $pocetZavodu += 1; }
+              if ($r8 > 0) { $pocetZavodu += 1; }
+              if ($r9 > 0) { $pocetZavodu += 1; }
+
+              echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-celkove-1998.php?id_category=$categoryId\">Sezona 1998</a></h3></td>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td>
+              		<td style=\"text-align:right; padding-right:15px;\">Dokonèených závodù / celkem:</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$pocetZavodu / 11</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Kategorie:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$category - $categoryName</b></td>
+              	    <td style=\"text-align:right; padding-right:15px;\">Souèet bodù (8 NEJ / celkem):</td>
+                    <td style=\"text-align:left; padding-left:15px;\"><b>$totalPointsBest / $totalPoints</b></td></tr>";
+              echo "<tr><td style=\"text-align:right; padding-right:15px;\">Koneèné umístìní:</td>
+                    <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$umisteniVKategorii. / $pocetZavodniku</b></td>";
+            }
+            if ($pocetZavodu === 0) {
+            	echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3>Sezona 1998 - bez úèasti</h3></td>";
+            }
+            // 1998 -----------------------------------------------------------
 
           ?>
         </table>
