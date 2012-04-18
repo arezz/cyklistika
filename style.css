@@ -1,8 +1,8 @@
 /* CSS Document */
 .container  {margin:auto; width:1250px; font-size:16px;}
-.menu     {position:relative; top:0px; left:0px; border-bottom:1px solid white; background-color:#535353; width:1250px; height:25px; text-align:center; vertical-align: middle;}
+.menu     {position:relative; top:0px; left:0px; background-color:#535353; width:1250px; height:32px; text-align:center; vertical-align: middle;}
 .content  {position:relative; top:-1px; left:0px; width:1250px; background-color:#0A0A0A; color:#FFFFFF; min-height:600px;}
-.paticka  {position:relative; top:0px; left:0px; background-color:#535353; width:1250; height:25px; text-align:center; vertical-align:middle;}
+.paticka  {position:relative; top:0px; left:0px; background-color:#535353; width:1250px; height:25px; text-align:center; vertical-align:middle;}
 table     {margin:auto; width:100%; table-layout:fixed; border-collapse:collapse;}
 td        {border:1px solid #000000; padding-left:5px; padding-right:5px; padding-top:3px; padding-bottom:3px; border:0px; background-color:#0A0A0A; text-align:center;}
 .odd td   {border:1px solid #000000; padding-left:5px; padding-right:5px; padding-top:3px; padding-bottom:3px; border:0px; background-color:#1A1A1A; text-align:center;}
@@ -10,6 +10,8 @@ td        {border:1px solid #000000; padding-left:5px; padding-right:5px; paddin
 .slimodd td {border:1px solid #000000; padding-left:5px; padding-right:5px; padding-top:3px; padding-bottom:3px; border:0px; background-color:#1A1A1A; text-align:center; width:30px;}
 th        {border:0px; background-color:#0A0A0A;}
 h1        {font-size:24px; font-weight:bold; color:#FF8F16;}
+h3        {font-size:20px; font-weight:bold; color:#FF8F16;}
+strong    {font-weight:bold; color:#FF8F16;}
 
 a:link    {color:#FF8F16;}
 a:hover   {color:#FF8F16;}
