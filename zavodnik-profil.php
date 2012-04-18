@@ -938,8 +938,7 @@
               $r3=$zaznam["race_3"];              $r4=$zaznam["race_4"];
               $r5=$zaznam["race_5"];              $r6=$zaznam["race_6"];
               $r7=$zaznam["race_7"];              $r8=$zaznam["race_8"];
-              $r9=$zaznam["race_9"];              $r10=$zaznam["race_10"];
-              $r11=$zaznam["race_11"];
+              $r9=$zaznam["race_9"];              
 	      $pocetZavodniku=$zaznam["total_racers"];
               $umisteniVKategorii=$zaznam["final_standing"];
 
@@ -953,8 +952,6 @@
               if ($r7 > 0) { $pocetZavodu += 1; }
               if ($r8 > 0) { $pocetZavodu += 1; }
               if ($r9 > 0) { $pocetZavodu += 1; }
-              if ($r10 > 0) { $pocetZavodu += 1; }
-              if ($r11 > 0) { $pocetZavodu += 1; }
               
               echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-celkove-1999.php?id_category=$categoryId\">Sezona 1999</a></h3></td>";
               echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
@@ -995,7 +992,8 @@
               $r3=$zaznam["race_3"];              $r4=$zaznam["race_4"];
               $r5=$zaznam["race_5"];              $r6=$zaznam["race_6"];
               $r7=$zaznam["race_7"];              $r8=$zaznam["race_8"];
-              $r9=$zaznam["race_9"];
+              $r9=$zaznam["race_9"];			  $r10=$zaznam["race_10"];
+              $r11=$zaznam["race_11"];
 	      $pocetZavodniku=$zaznam["total_racers"];
               $umisteniVKategorii=$zaznam["final_standing"];
 
@@ -1009,7 +1007,9 @@
               if ($r7 > 0) { $pocetZavodu += 1; }
               if ($r8 > 0) { $pocetZavodu += 1; }
               if ($r9 > 0) { $pocetZavodu += 1; }
-
+              if ($r10 > 0) { $pocetZavodu += 1; }
+              if ($r11 > 0) { $pocetZavodu += 1; }
+              
               echo "<tr><td colspan=\"4\" style=\"text-align:center;\"><h3><a href=\"vysledky-celkove-1998.php?id_category=$categoryId\">Sezona 1998</a></h3></td>";
               echo "<tr><td style=\"text-align:right; padding-right:15px;\">Oddíl:</td>
                     <td style=\"text-align:left; color:#FF8F16; padding-left:15px;\"><b>$team</b></td>
