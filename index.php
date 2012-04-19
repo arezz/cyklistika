@@ -85,7 +85,7 @@
               <tr>
                   <td>&nbsp;</td>
                   <td  colspan="2">
-                      
+                      <a href="http://www.raynet.cz" target="blank"><img src="pics/RAYNET_logo_2011_gray2.png"></img></a>
                   </td>                  
                   <td>&nbsp;</td>
             </tr>
