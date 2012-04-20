@@ -15,9 +15,10 @@
       <div class="content">
        
           <?php
-            
-            $dotaz="UPDATE spac_race SET active_login=1 WHERE id=24";
-            $vysledek = MySQL_Query($dotaz);
+            if (isset($_SESSION["administrace"])) {
+                $dotaz="UPDATE spac_race SET active_login=1 WHERE id=24";
+                $vysledek = MySQL_Query($dotaz);
+            }
           ?>
         
       </div>      
