@@ -16,15 +16,15 @@ if (isset($_POST["action"]))
   {
     $active = 0;
   }
-  if (isset($_POST["name"]) & isset($_POST["championship"]) & isset($_POST["season"]))
+  if (isset($_POST["id"]) & isset($_POST["name"]) & isset($_POST["championship"]) & isset($_POST["season"]))
   {
     if (ctype_digit($championship) & ctype_digit($season))
     {
-      $sql = "UPDATE spac_race SET (null,'$name','$date','$place',$championship,$active,$season,'$notice') WHERE id=$id";
+      $sql = "UPDATE spac_race SET name='$name',date='$date',place='$place',championship=$championship,active_login=$active,season=$season,notice='$notice' WHERE id=$id";
       $vysldek = MySQL_Query($sql);
-      if ($sql)
+      if ($vysldek)
       {
-        $succes = "Závod byl pøidán do databáze";
+      	$succes = "Závod byl upraven";
       }
       else
       {
