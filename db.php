@@ -54,7 +54,7 @@
                 if ($vysledek) { echo "success<br>"; }
             }
 
-            if (isset($_SESSION["administrace"]) && true) {
+            if (isset($_SESSION["administrace"]) && false) {
                 replaceId(221, 140);
                 replaceId(797, 931);
                 replaceId(11, 190);
@@ -128,7 +128,46 @@
                 replaceId(1080,795);
                 replaceId(301,522);
                 replaceId(443,643);
-                // N 
+                // O
+                replaceId(807,983);
+                replaceId(1269,891);
+                replaceId(224,167);
+                replaceId(1028,215);
+                replaceId(98,215);
+                replaceId(168,107);
+                replaceId(1357,1280);
+                replaceId(899,96);
+                replaceId(936,520);
+                replaceId(611,381);
+                replaceId(861,381);
+                replaceId(932,510);
+                replaceId(1551,1553);
+                replaceId(1024,618);
+                replaceId(207,614);
+                replaceId(801,528);
+                replaceId(963,528);
+                replaceId(1265,1436);
+                replaceId(1438,1224);
+                replaceId(765,515);
+                replaceId(257,515);
+                replaceId(434,636);
+                replaceId(1270,636);
+                replaceId(1023,865);
+                replaceId(1110,865);
+                replaceId(602,1029);
+                replaceId(524,3);
+                replaceId(1570,1430);
+                replaceId(553,343);
+                replaceId(1426,1264);
+                replaceId(863,616);
+                replaceId(581,838);
+                replaceId(210,80);
+                replaceId(1377,1520);
+                replaceId(985,871);
+                replaceId(789,968);
+                replaceId(187,667);
+                replaceId(1140,1114);
+                replaceId(1511,631);
             }
           ?>
         
