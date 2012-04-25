@@ -17,7 +17,7 @@
         <?php include("menu.php"); ?>
       </div>
       <div class="content">
-        <form action='administrace.php' method='post'>
+        <form action='admin.php' method='post'>
           <table class="prihlaseni">
             <tr><td style="height:50px; text-align:center; vertical-align:bottom;"><h1>Administrace</h1></td></tr>
             <tr><td style="text-align:center;"><?php if (isset($_SESSION['administrace'])) {echo "<span class='succes'>Pøihlášení probìhlo úspìšnì</span>";} else {echo "Heslo pro administraci:&nbsp;<input type='password' name='password' /><input type='hidden' name='action' value='1' /><input type='submit' value='OK' />(nedokonèeno)";} ?></td></tr>

@@ -53,6 +53,21 @@
                 $vysledek = MySQL_Query($dotaz);
                 if ($vysledek) { echo "success<br>"; }
             }
+            
+            if (isset($_SESSION["administrace"]) && false) {
+                $dotaz="INSERT INTO `spac_category`(`id`,`prefix`,`name`,`coefficient`,`season`) VALUES (NULL,'žm','žáci mladší 2002-2000','1.00','1900')";
+                $vysledek = MySQL_Query($dotaz);                
+                $dotaz="INSERT INTO `spac_category`(`id`,`prefix`,`name`,`coefficient`,`season`) VALUES (NULL,'žs','žáci starší 1999-1998','1.00','1900')";
+                $vysledek = MySQL_Query($dotaz);     
+                $dotaz="INSERT INTO `spac_category`(`id`,`prefix`,`name`,`coefficient`,`season`) VALUES (NULL,'žh','žákynì 2002-1998','1.00','1900')";
+                $vysledek = MySQL_Query($dotaz);     
+                $dotaz="INSERT INTO `spac_category`(`id`,`prefix`,`name`,`coefficient`,`season`) VALUES (NULL,'k','kadeti 1997-1996','1.00','1900')";
+                $vysledek = MySQL_Query($dotaz);     
+                $dotaz="INSERT INTO `spac_category`(`id`,`prefix`,`name`,`coefficient`,`season`) VALUES (NULL,'kh','kadetky 1997-1996','1.00','1900')";
+                $vysledek = MySQL_Query($dotaz);     
+                $dotaz="INSERT INTO `spac_category`(`id`,`prefix`,`name`,`coefficient`,`season`) VALUES (NULL,'mž','juniorky 1995-1994','1.00','1900')";
+                $vysledek = MySQL_Query($dotaz);     
+            }
 
             if (isset($_SESSION["administrace"]) && false) {
                 replaceId(221, 140);

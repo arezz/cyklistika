@@ -29,7 +29,8 @@
             <tr><td style="text-align:right; vertical-align:top;">Poznámka:&nbsp;</td><td style="text-align:left;"><textarea name="poznamka" rows="4" cols="20"></textarea></td></tr>
             <tr><td></td><td style="text-align:left;"><input type="hidden" name="action" value="1" /><input type="submit" value="Potvrdit" /></td></tr>
             <tr><td colspan="2" style="text-align:center;"><?php if (isset($succes)) {if ($succes == 1){ echo "<span class='succes'>Závodník byl úspìšnì pøidán</span>";} if ($succes == 0) { echo "<span class='error'>Chyba na stranì serveru</span>";} } if (isset($error)){echo "<span class='error'>Jeden nebo více údajù nebylo vyplnìno</span>";} ?></td></tr>
-            <tr><td colspan="2" style="text-align:center;"><span class="error">*</span> - povinné údaje</td></tr>          
+            <tr><td colspan="2" style="text-align:center;"><span class="error">*</span> povinné údaje</td></tr>
+            <tr><td colspan="2" style="text-align:center;">Pozn.: kategorie žákù, kadetù a juniorek pøihlašovat pouze v pøípadì, pokud jsou vypsány v propozicích!</td></tr>
           </table>
         </form>    
       </div>
