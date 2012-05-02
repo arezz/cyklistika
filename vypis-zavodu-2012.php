@@ -46,11 +46,11 @@
               $mesic = str_replace($monnumber, $monname, $mesic);
               if (($i % 2) & isset($_SESSION["administrace"]))
               {
-                echo "<tr><td>$den. $mesic $rok</td><td style=\"text-align:left;\"><a href='detail-zavodu.php?zavod=$id'>$name</a> <span class='admin'><a href='edit-zavod.php?id=$id'>[edit]</a> <a href='delete.php?f=zavod&amp;id=$id'>[delete]</a></span></td><td style=\"text-align:left;\">$place</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
+                echo "<tr><td>$den. $mesic $rok</td><td style=\"text-align:left;\"><a href='detail-zavodu.php?zavod=$id'>$name</a> <span class='admin'><a href='vypis-zavodu-edit-zavod.php?id=$id'>[edit]</a> <a href='delete.php?f=zavod&amp;id=$id'>[delete]</a></span></td><td style=\"text-align:left;\">$place</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
               }
               if (!($i % 2) & isset($_SESSION["administrace"]))
               {
-                echo "<tr class='odd'><td>$den. $mesic $rok</td><td style=\"text-align:left;\"><a href='detail-zavodu.php?zavod=$id'>$name</a> <span class='admin'><a href='edit-zavod.php?id=$id'>[edit]</a> <a href='delete.php?f=zavod&amp;id=$id'>[delete]</a></span></td><td style=\"text-align:left;\">$place</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
+                echo "<tr class='odd'><td>$den. $mesic $rok</td><td style=\"text-align:left;\"><a href='detail-zavodu.php?zavod=$id'>$name</a> <span class='admin'><a href='vypis-zavodu-edit-zavod.php?id=$id'>[edit]</a> <a href='delete.php?f=zavod&amp;id=$id'>[delete]</a></span></td><td style=\"text-align:left;\">$place</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
               }
               if (($i % 2) & !isset($_SESSION["administrace"]))
               {
@@ -61,15 +61,7 @@
                 echo "<tr class='odd'><td>$den. $mesic $rok</td><td style=\"text-align:left;\"><a href='detail-zavodu.php?zavod=$id'>$name</a></td><td style=\"text-align:left;\">$place</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
               }               
               $i++;
-            }
-            if (($i % 2) & isset($_SESSION["administrace"]))
-            {
-              echo "<tr><td colspan='4'><span class='admin'><a href='pridat-zavod.php'>[pøidat závod]</a></admin></td></tr>";
-            }
-            if (!($i % 2) & isset($_SESSION["administrace"]))
-            {
-              echo "<tr class='odd'><td colspan='4'><span class='admin'><a href='pridat-zavod.php'>[pøidat závod]</a></admin></td></tr>";
-            }
+            }            
           ?>
         </table>
       </div>

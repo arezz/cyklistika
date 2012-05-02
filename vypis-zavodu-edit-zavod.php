@@ -1,6 +1,6 @@
 <?php
   require("nastaveni.php");
-  include("edit-zavod-fce.php");
+  include("vypis-zavodu-edit-zavod-fce.php");
   $id = $_GET["id"];
   $dotaz="SELECT * FROM spac_race WHERE id=$id";
   $vysledek = MySQL_Query($dotaz);
@@ -30,7 +30,7 @@
         <?php include("menu.php"); ?>
       </div>
       <div class="content">
-        <form action="edit-zavod.php?id=<?php echo $id; ?>" method="post">
+        <form action="vypis-zavodu-edit-zavod.php?id=<?php echo $id; ?>" method="post">
           <table>
             <tr><td colspan="6" style="text-align:center; vertical-align:bottom; height:50px;"><h1>Editace závodu</h1></td></tr>
             <tr><th>Název závodu</th><th>Datum (rrrr-mm-dd)</th><th>Místo</th><th>Šampionát (integer)</th><th>Sezóna (integer)</th><th>Poznámka</th><th style="width:20px;">Aktivní</th></tr>
