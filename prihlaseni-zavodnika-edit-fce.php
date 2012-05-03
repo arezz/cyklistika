@@ -34,7 +34,7 @@ if (isset($_POST["action"])) //uz se odesilalo
     }
     else
     {
-      $err["kategorie"] = 1;
+      $err["kategorie"] = 1;      
     }
     $i = 0;
     //blbovzdornost konec
@@ -63,15 +63,15 @@ if (isset($_POST["action"])) //uz se odesilalo
     else
     {
       $poznamka = "NULL";
-    }
+    }    
     if (count($err) > 0) //uzivatel je blb
     {
       $error = 1;
-      //header("Location: prihlaseni-zavodnika.php".$error."&chyba=1"); //chyba se odesle zpet
     }
     else //vse je v pohode jde se ukladat do db
     {
-      $sql = "UPDATE spac_registration SET id_race=$zavod, surname='$prijmeni',name='$jmeno',id_category=$kategorie,team='$oddil',spac_number=$cislo,notice=$poznamka WHERE id=$id";
+      $sql = "UPDATE spac_registration SET id_race=$zavod, surname='$prijmeni',name='$jmeno',id_category=$kategorie,team=$oddil,spac_number=$cislo,notice=$poznamka WHERE id=$id";
+      //die(var_dump($sql));
       $vysldek = MySQL_Query($sql);
       if ($vysldek)
       {
