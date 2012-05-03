@@ -80,11 +80,11 @@
               $notice=$zaznam["notice"];
               if (($i % 2) & isset($_SESSION['administrace']))
               {
-                echo "<tr><td style=\"text-align:left;\">$row.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$category,&nbsp;&nbsp;&nbsp;$number</td><td style=\"text-align:left;\">$surname $name <span class='admin'><a href='edit.php?f=ucastnik&amp;id=$id&amp;zavod=$zavod&amp;kategorie=$kategorie'>[edit]</a> <a href='delete.php?f=ucastnik&amp;id=$id&amp;zavod=$zavod&amp;kategorie=$kategorie'>[delete]</a></span></td><td>$team</td><td>$date</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
+                echo "<tr><td style=\"text-align:left;\">$row.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$category,&nbsp;&nbsp;&nbsp;$number</td><td style=\"text-align:left;\">$surname $name <span class='admin'><a href='prihlaseni-zavodnika-edit.php?id=$id'>[edit]</a> <a href='delete.php?f=ucastnik&amp;id=$id&amp;zavod=$zavod&amp;kategorie=$kategorie'>[delete]</a></span></td><td>$team</td><td>$date</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
               }
               if (!($i % 2) & isset($_SESSION['administrace']))
               {
-                echo "<tr class='odd'><td style=\"text-align:left;\">$row.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$category,&nbsp;&nbsp;&nbsp;$number</td><td style=\"text-align:left;\">$surname $name <span class='admin'><a href='edit.php?f=ucastnik&amp;id=$id&amp;zavod=$zavod&amp;kategorie=$kategorie'>[edit]</a> <a href='delete.php?f=ucastnik&amp;id=$id&amp;zavod=$zavod&amp;kategorie=$kategorie'>[delete]</a></span></td><td>$team</td><td>$date</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
+                echo "<tr class='odd'><td style=\"text-align:left;\">$row.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$category,&nbsp;&nbsp;&nbsp;$number</td><td style=\"text-align:left;\">$surname $name <span class='admin'><a href='prihlaseni-zavodnika-edit.php?id=$id'>[edit]</a> <a href='delete.php?f=ucastnik&amp;id=$id&amp;zavod=$zavod&amp;kategorie=$kategorie'>[delete]</a></span></td><td>$team</td><td>$date</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
               }
               if (($i % 2) & !isset($_SESSION['administrace']))
               {
