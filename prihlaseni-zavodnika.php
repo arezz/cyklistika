@@ -26,7 +26,7 @@
             <tr><td style="text-align:right; vertical-align:top;">Oddíl:&nbsp;</td><td style="text-align:left;"><input type="text" name="oddil" <?php writte("oddil"); ?>/></td></tr>
             <tr><td style="text-align:right; vertical-align:top;">Startovní èíslo:&nbsp;</td><td style="text-align:left;"><input type="text" name="cislo" <?php writte("cislo"); ?>/> (pouze pro <a href="http://www.spac-os.cz/web/_docs/seznam_licenci_2012.xls">licencované</a>)</td></tr>
             <tr><td style="text-align:right; vertical-align:top;">Kategorie:&nbsp;</td><td style="text-align:left;"><?php include("prihlaseni-combobox-kategorie.php"); errmsg("kategorie","Vyberte kategorii"); ?></td></tr>
-            <tr><td style="text-align:right; vertical-align:top;">Poznámka:&nbsp;</td><td style="text-align:left;"><textarea name="poznamka" rows="4" cols="20"></textarea></td></tr>
+            <tr><td style="text-align:right; vertical-align:top;">Poznámka:&nbsp;</td><td style="text-align:left;"><textarea name="poznamka" rows="4" cols="40"></textarea></td></tr>
             <tr><td></td><td style="text-align:left;"><input type="hidden" name="action" value="1" /><input type="submit" value="Potvrdit" /></td></tr>
             <tr><td colspan="2" style="text-align:center;"><?php if (isset($succes)) {if ($succes == 1){ echo "<span class='succes'>Závodník byl úspìšnì pøidán</span>";} if ($succes == 0) { echo "<span class='error'>Chyba na stranì serveru</span>";} } if (isset($error)){echo "<span class='error'>Jeden nebo více údajù nebylo vyplnìno</span>";} ?></td></tr>
             <tr><td colspan="2" style="text-align:center;"><span class="error">*</span> povinné údaje</td></tr>
