@@ -31,3 +31,5 @@ body      {background-color:#000000;}
 
 .prompt   {margin:auto; height:50px; text-align:center;}
 .question {text-align:center;}
+
+iframe {width:750px;height:1000px;border:0px;border-top:10px solid #fff;margin-left:0px;}
