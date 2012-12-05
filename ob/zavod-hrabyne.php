@@ -49,7 +49,7 @@
             </td>
             <td>&nbsp;</td>
           </tr>
-          <tr><th>Kategorie</th><th>Jméno</th><th>Datum a èas pøihlášení</th><th>Poznámka</th></tr>
+          <tr><th>Kategorie</th><th>Jméno</th><th>Poznámka</th></tr>
           <?php 
             $dotaz="SELECT c.prefix, rg.id, rg.surname, rg.name, rg.team, rg.spac_number, rg.date_time, rg.notice FROM spac_registration rg 
                     JOIN spac_category c ON (rg.id_category=c.id)
@@ -77,19 +77,19 @@
               $notice=$zaznam["notice"];
               if (($i % 2) & isset($_SESSION['administrace']))
               {
-                echo "<tr><td style=\"text-align:left;\">$row.&nbsp;&nbsp;&nbsp;&nbsp;$category</td><td style=\"text-align:left;\">$surname $name <span class='admin'><a href='prihlaseni-zavodnika-edit.php?id=$id'>[edit]</a> <a href='delete.php?f=ucastnik&amp;id=$id&amp;zavod=$zavod&amp;kategorie=$kategorie'>[delete]</a></span></td><td>$date</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
+                echo "<tr><td style=\"text-align:left;\">$row.&nbsp;&nbsp;&nbsp;&nbsp;$category</td><td style=\"text-align:left;\">$surname $name <span class='admin'><a href='prihlaseni-zavodnika-edit.php?id=$id'>[edit]</a> <a href='delete.php?f=ucastnik&amp;id=$id&amp;zavod=$zavod&amp;kategorie=$kategorie'>[delete]</a></span></td><td colspan=\"2\" style=\"text-align:left;\">$notice</td></tr>\n\t";
               }
               if (!($i % 2) & isset($_SESSION['administrace']))
               {
-                echo "<tr class='odd'><td style=\"text-align:left;\">$row.&nbsp;&nbsp;&nbsp;&nbsp;$category</td><td style=\"text-align:left;\">$surname $name <span class='admin'><a href='prihlaseni-zavodnika-edit.php?id=$id'>[edit]</a> <a href='delete.php?f=ucastnik&amp;id=$id&amp;zavod=$zavod&amp;kategorie=$kategorie'>[delete]</a></span></td><td>$date</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
+                echo "<tr class='odd'><td style=\"text-align:left;\">$row.&nbsp;&nbsp;&nbsp;&nbsp;$category</td><td style=\"text-align:left;\">$surname $name <span class='admin'><a href='prihlaseni-zavodnika-edit.php?id=$id'>[edit]</a> <a href='delete.php?f=ucastnik&amp;id=$id&amp;zavod=$zavod&amp;kategorie=$kategorie'>[delete]</a></span></td><td colspan=\"2\" style=\"text-align:left;\">$notice</td></tr>\n\t";
               }
               if (($i % 2) & !isset($_SESSION['administrace']))
               {
-                echo "<tr><td style=\"text-align:left;\">$row.&nbsp;&nbsp;&nbsp;&nbsp;$category</td><td style=\"text-align:left;\">$surname $name</td><td>$date</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
+                echo "<tr><td style=\"text-align:left;\">$row.&nbsp;&nbsp;&nbsp;&nbsp;$category</td><td style=\"text-align:left;\">$surname $name</td><td colspan=\"2\" style=\"text-align:left;\">$notice</td></tr>\n\t";
               }
               if (!($i % 2) & !isset($_SESSION['administrace']))
               {
-                echo "<tr class='odd'><td style=\"text-align:left;\">$row.&nbsp;&nbsp;&nbsp;&nbsp;$category</td><td style=\"text-align:left;\">$surname $name</td><td>$date</td><td style=\"text-align:left;\">$notice</td></tr>\n\t";
+                echo "<tr class='odd'><td style=\"text-align:left;\">$row.&nbsp;&nbsp;&nbsp;&nbsp;$category</td><td style=\"text-align:left;\">$surname $name</td><td colspan=\"2\" style=\"text-align:left;\">$notice</td></tr>\n\t";
               }
               $i++;
             }                   
