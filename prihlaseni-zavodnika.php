@@ -24,7 +24,7 @@
             <tr><td style="text-align:right; vertical-align:top;">Pøíjmení:&nbsp;</td><td style="text-align:left;"><input type="text" name="prijmeni" <?php writte("prijmeni"); ?>/><?php errmsg("prijmeni","Zadejte pøíjmení"); ?></td></tr>
             <tr><td style="text-align:right; vertical-align:top;">Jméno:&nbsp;</td><td style="text-align:left;"><input type="text" name="jmeno" <?php writte("jmeno"); ?>/><?php errmsg("jmeno","Zadejte jméno"); ?></td></tr>
             <tr><td style="text-align:right; vertical-align:top;">Oddíl:&nbsp;</td><td style="text-align:left;"><input type="text" name="oddil" <?php writte("oddil"); ?>/></td></tr>
-            <tr><td style="text-align:right; vertical-align:top;">Startovní èíslo:&nbsp;</td><td style="text-align:left;"><input type="text" name="cislo" <?php writte("cislo"); ?>/> (pouze pro <a href="http://www.spac-os.cz/web/_docs/seznam_licenci_2012.xls">licencované</a>)</td></tr>
+            <tr><td style="text-align:right; vertical-align:top;">Startovní èíslo:&nbsp;</td><td style="text-align:left;"><input type="text" name="cislo" <?php writte("cislo"); ?>/> (pouze pro <a href="http://www.spac-os.cz/uzitecne">licencované</a>)</td></tr>
             <tr><td style="text-align:right; vertical-align:top;">Kategorie:&nbsp;</td><td style="text-align:left;"><?php include("prihlaseni-combobox-kategorie.php"); errmsg("kategorie","Vyberte kategorii"); ?></td></tr>
             <tr><td style="text-align:right; vertical-align:top;">Poznámka:&nbsp;</td><td style="text-align:left;"><textarea name="poznamka" rows="4" cols="40"></textarea></td></tr>
             <tr><td></td><td style="text-align:left;"><input type="hidden" name="action" value="1" /><input type="submit" value="Potvrdit" /></td></tr>
