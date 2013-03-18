@@ -69,7 +69,7 @@
                 $vysledek = MySQL_Query($dotaz);     
             }
 
-            if (isset($_SESSION["administrace"]) && true) {
+            if (isset($_SESSION["administrace"]) && false) {
             $dotaz="INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Cena Trispolu', '2013-04-24', 'Karlovice', 0, 1, 2013, 'silnice, ACS Drak Vrbno');";
                 $vysledek = MySQL_Query($dotaz);                
                 $dotaz="INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Èasovka ArcelorMittal - mistrovství', '2013-05-12', 'Nošovice', 1, 0, 2013, 'èasovka, Racing Olešná F-M');";
