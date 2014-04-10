@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=windows-1250" />
     <meta name="generator" content="PSPad editor, www.pspad.com" />
-    <title>SPAC - přihlašování na závody</title>
+    <title>SPAC - přihlašování - výpis závodů</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
@@ -26,7 +26,7 @@
             <th>Poznámka</th>
           </tr>
           <?php 
-            $dotaz="SELECT * FROM spac_race WHERE season=2012 ORDER BY date";
+            $dotaz="SELECT * FROM spac_race WHERE season=1 ORDER BY date";
             $vysledek = MySQL_Query($dotaz);
             $i = 0;
             while ($zaznam = MySQL_Fetch_Array($vysledek))

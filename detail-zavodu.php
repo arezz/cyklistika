@@ -27,7 +27,7 @@
       </div>
       <div class="content">
         <table>
-          <tr><td style="vertical-align:bottom; height:50px;"><a href="vypis-zavodu-2013.php">Zpìt na výpis závodù</a></td><td colspan="3" style="text-align:center; vertical-align:bottom;"><h1>Seznam pøihlášených</h1></td><td style="text-align:right; vertical-align:bottom;"><form action="detail-zavodu.php?zavod=<?php echo $zavod; ?>"><?php include("detail-zavodu-combobox-kategorie.php"); ?></form></td></tr>
+          <tr><td style="vertical-align:bottom; height:50px;"><a href="vypis-zavodu.php">Zpìt na výpis závodù</a></td><td colspan="3" style="text-align:center; vertical-align:bottom;"><h1>Seznam pøihlášených</h1></td><td style="text-align:right; vertical-align:bottom;"><form action="detail-zavodu.php?zavod=<?php echo $zavod; ?>"><?php include("detail-zavodu-combobox-kategorie.php"); ?></form></td></tr>
           <tr>
             <td>&nbsp;</td>
             <td colspan="3">

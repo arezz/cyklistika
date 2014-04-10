@@ -1,5 +1,5 @@
 <h2>
-<a href="vypis-zavodu-2013.php">Sezóna 2013</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="vypis-zavodu.php">Aktuální sezóna</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="prihlaseni-zavodnika.php">Pøihlášení na závod</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="statistiky.php">Statistiky</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="index.php">Info</a>&nbsp;&nbsp;|&nbsp;&nbsp;
