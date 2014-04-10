@@ -1,0 +1,23 @@
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Cena Trispolu', '2014-04-26', 'Karlovice', 0, 1, 1, 'silnice, ACS Drak Vrbno');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Memori·l Jana Ferdyna', '2014-05-01', 'BohumÌn', 0, 0, 1, 'silnice, LowellPro äafrata');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Krnovsk˝ kriù·k', '2014-05-10', 'Krnov', 0, 0, 1, 'kritÈrium, TJ Lokomotiva Krnov');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Stonavsk· Ëasovka druûstev', '2014-05-11', 'Stonava', 0, 0, 1, 'Ëasovka druûstev, SDH Stonava');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('O cenu Krnova', '2014-05-18', 'Krnov', 0, 0, 1, 'silnice, Cyklistika pro vöechny');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Velk· cena Laöska', '2014-06-01', 'Lichnov u NJ', 0, 0, 1, 'silnice, CK Frenöt·t p.R.');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Tour de S·dek', '2014-06-07', 'VelkÈ Heraltice - S·dek', 0, 0, 1, 'silnice, TJ Lokomotiva Krnov');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('»asovka ArcelorMittal', '2014-06-08', 'Mor·vka', 0, 0, 1, 'Ëasovka, Racing Oleön· F-M');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Do vrchu Bahenec', '2014-06-15', 'Jablunkov', 0, 0, 1, 'Ëasovka, CK OrlÌk Orlov·');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Cena Continentalu', '2014-06-21', 'Frenöt·t p. RadhoötÏm', 0, 0, 1, 'z·vod do vrchu, CK Frenöt·t p.R.');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Tour de Javorov˝', '2014-06-22', 'Old¯ichovice u T¯ince', 0, 0, 1, 'z·vod do vrchu, TJ Té T¯inec');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Memori·l Aloise Dohnala', '2014-06-28', 'Suchdol n. Odrou', 0, 0, 1, 'silnice, Cyklokramo Suchdol n.O.');
+
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Velk· cena SPAC', '2014-07-05', 'Mor·vka', 0, 0, 1, 'etapov˝ z·vod SPACu');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Grand Prix Forman - mistrovstvÌ', '2014-08-03', 'Nov˝ JiËÌn', 1, 0, 1, 'silnice, Forman Cycling Team');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Stonavsk· Ëasovka - mistrovstvÌ', '2014-08-10', 'Stonava', 1, 0, 1, 'Ëasovka, SDH Stonava');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Mokrolazeck· 60', '2014-08-16', 'MokrÈ Lazce', 0, 0, 1, 'silnice, LK MokrÈ Lazce');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Memori·l Jana VeselÈho', '2014-08-23', 'Ostrava-Poruba', 0, 0, 1, 'kritÈrium, HlavnÌ t¯Ìda');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('KritÈrium mezi ploty', '2014-08-24', 'Star· Ves n.O.', 0, 0, 1, 'kritÈrium, ACK Star· Ves n. Ond¯ejnicÌ');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Paskovsk˝ kriù·k', '2014-08-31', 'Paskov', 0, 0, 1, 'kritÈrium, Sokol éabeÚ');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('BÏlskÈ okruhy', '2014-09-07', 'BÏl·', 0, 0, 1, 'silnice, CK Hobby BohumÌn');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('Tour de »upek', '2014-09-14', 'BÏl·', 0, 0, 1, 'silnice, Racing Oleön·');
+INSERT INTO `spac_race` (`name`, `date`, `place`, `championship`, `active_login`, `season`, `notice`) VALUES ('O poh·r obce Kr·sn·', '2014-09-21', 'Kr·sn·', 0, 0, 1, 'Ëasovka, SDH Kr·sn·');
